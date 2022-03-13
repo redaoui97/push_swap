@@ -1,7 +1,7 @@
 <h1>Push swap</h1>
 4th project on the 42 cursus
 
-<h3>Objectives>
+<h3>Objectives</h3>
 <p>
 The objectif of this project is always a very important stop in a developer's journey. It is often the first encounter with the concept of complexity.
 Sorring algorithms and their complexity are part of the classic questions discussed during job interviews. It's probably a goodtime to look at these concepts since you'll have to face them at some point.
