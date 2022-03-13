@@ -27,7 +27,30 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
     <li>Search: Searches for a specific node</li>
   </ul>
   <h4>Linked list conception:</h4>
-  
-  
+  Struct : node
+  <ul>
+    <li>Size: sizee of the list</li>
+    <li>Position: position of the node in the list</li>
+    <li>Previous: address of the previous node (NULL if first)</li>
+    <li>Next: address of the next node (NULL if last)</li>
+    <li>Value: value of the node (integer)</li>
+    <li>First: address of the first node</li>
+    <li>Last: address of the last node</li>
+    <li>Is_empty: status of the list (boolean)</li>
+  </ul>
+  <h3>Second step: Implement the movees</h3>
+  <ul>
+  <li>sa(swap a):Swap the first 2 elements at the top of stacka. Do nothing if there is only one or no elements.</li>
+  <li>sb(swap b):Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.</li>
+  <li>ss:sa and sb at the same time.</li>
+  <li>pa(push a):Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.</li>
+  <li>pb(push b):Take the first element at the top of a and put it at the top of b. Do nothing if a isempty.</li>
+  <li>ra(rotate a):Shift up all elements of stack a by 1. The first element becomes the last one.</li>
+  <li>rb(rotate b):Shift up all elements of stack b by 1. The first element becomes the last one.</li>
+  <li>rr:ra and rb at the same time.</li>
+  <li>rra(reverse rotate a):Shift down all elements of stack a by 1. The last element becomes the first one.</li>
+  <li>rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
+  <li>rrr:rra and rrb at the same time.</li>
+  </ul>
   </p>
   
