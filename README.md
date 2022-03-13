@@ -15,8 +15,12 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   
 | Syntax      |
 | ----------- | 
-| Header      | 
-| Paragraph   |
+|             | 
+|             |
+|             |
+|             |
+|             |
+|             |
   
   </p>
   
