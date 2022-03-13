@@ -52,5 +52,8 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <li>rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
   <li>rrr:rra and rrb at the same time.</li>
   </ul>
+  <h3>Third step: Implement sorting algorithm</h3>
+  <h4>I - picking the fastest sorting algorithm</h4>
   </p>
+  
   
