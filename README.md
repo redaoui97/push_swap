@@ -13,7 +13,7 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <p>
     A stack is a linear data structure which follows a particular order in which the operations are performed (Lifo-last in firt out/Filo-first in last out)
     |       stack       |
-    ---------------------
+    ----------
     |                   |
     |                   |
     |                   |
