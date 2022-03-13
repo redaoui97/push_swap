@@ -12,9 +12,22 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <h3>Stack</h3>
   <p>
     A stack is a linear data structure which follows a particular order in which the operations are performed (Lifo-last in firt out/Filo-first in last out)
+ 
+  <h3>First step: implement a stack using linked lists</h3>
+  Linked list: sequence of data structures which are connected via links:
+  <ul>
+  <li>Simple linked list: forward only</li>
+  <li>Doubly linkeed list: Forward and backward</li>
+  <li>Circular linkeed list: forward, backwards and last item contains link of the first element as next, first has link to the last element as previous </li>
+  </ul>
+  Operations: 
+  <ul>
+    <li>Insertion: add 1 element at the beginning</li>
+    <li>Deletion: Deelete 1 element at the beginning</li>
+    <li>Search: Searches for a specific node</li>
+  </ul>
+  <h4>Linked list conception:</h4>
   
-                      ![image](https://user-images.githubusercontent.com/26080106/158059239-58e65d46-27d4-4d14-9e05-d3a8f484d14d.png)
-
   
   </p>
   
