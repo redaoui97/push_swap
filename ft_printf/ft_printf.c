@@ -56,3 +56,8 @@ int	ft_printf(const char *f, ...)
 	va_end(args);
 	return (len);
 }
+int main(void)
+{
+	ft_printf("heello world");
+	return 0;
+}
