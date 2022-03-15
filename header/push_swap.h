@@ -9,13 +9,15 @@
 //linked list
 typedef struct nodes
 {
-	int	size;
 	int	position;
 	int	value;
-	node	*previous;
-	node	*next;
-	node	*first;
-	node	*last;
+	struct nodes	*previous;
+	struct nodes	*next;
+	struct nodes	*first;
+	struct nodes	*last;
 	int	is_empty;
 } node;
+
+//function
+//s
 #endif
