@@ -20,12 +20,6 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <li>Doubly linkeed list: Forward and backward</li>
   <li>Circular linkeed list: forward, backwards and last item contains link of the first element as next, first has link to the last element as previous </li>
   </ul>
-  Operations: 
-  <ul>
-    <li>Insertion: add 1 element at the beginning</li>
-    <li>Deletion: Deelete 1 element at the beginning</li>
-    <li>Search: Searches for a specific node</li>
-  </ul>
   <h4>Linked list conception:</h4>
   Struct : node
   <ul>
