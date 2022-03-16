@@ -15,9 +15,9 @@ typedef struct nodes
 	struct nodes	*next;
 	struct nodes	*first;
 	struct nodes	*last;
-	int	is_empty;
 } node;
 
-//function
-//s
+//functions nodes implementation
+node	*new_node(int value);
+void	add_element(node *stack_a, int value);
 #endif

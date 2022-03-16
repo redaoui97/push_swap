@@ -1,26 +1,29 @@
 #include "../header/push_swap.h"
 
-void	add_element(node stack_a, node stack_b, int value)
-{
-	node	new;
+//creates a node and adds it to the top of the list
 
-	if(!stack_a || !stack_b)
-		return ;
-	new.size = stack_a->size + 1;
-	new.position = 0;
-	new.value = value;
-	new.previous = NULL;
-	new.next = stack_a;
-	new.first = new;
-	new.last = stack_a->last;
-	new.is_empty = 0;
-	while (stack_a->next)
+void	add_element(node *stack_a, int value)
+{
+	node	*new;
+	
+	new = new_node(value);
+	new->previous = NULL;
+	new->first = new;
+	if(!stack_a)
 	{
-		stack_a->size++;
+		new->next = NULL;
+		new->last = new;
+		return ;
+	}
+	new->next = stack_a;
+	new->last = stack_a->last;
+	stack_a->previous = new;
+	while (stack_a)
+	{
 		stack_a->position++;
-		stack_a->
+		stack_a->first = new;
 		stack_a = stack_a->next;
-	}	
+	}
 }
 int main(void)
 {
