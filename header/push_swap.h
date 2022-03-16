@@ -19,5 +19,7 @@ typedef struct nodes
 
 //functions nodes implementation
 node	*new_node(int value);
-void	add_element(node *stack_a, int value);
+void	add_element(node **stack_a, int value);
+void	show_elements(node *stack_a);
+void	clear_elements(node **stack_a);
 #endif

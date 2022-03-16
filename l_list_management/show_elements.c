@@ -1,4 +1,4 @@
-#include "../Header/push_swap.h"
+#include "../header/push_swap.h"
 
 void show_elements(node *stack_a)
 {
