@@ -23,14 +23,12 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <h4>Linked list conception:</h4>
   Struct : node
   <ul>
-    <li>Size: size of the list</li>
     <li>Position: position of the node in the list</li>
+    <li>Value: value of the node (integer)</li>
     <li>Previous: address of the previous node (NULL if first)</li>
     <li>Next: address of the next node (NULL if last)</li>
-    <li>Value: value of the node (integer)</li>
     <li>First: address of the first node</li>
     <li>Last: address of the last node</li>
-    <li>Is_empty: status of the list (boolean)</li>
   </ul>
   Operations on list:
   <ul>
