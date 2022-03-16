@@ -5,7 +5,7 @@
 void	add_element(node **stack_a, int value)
 {
 	node	*new;
-	
+
 	new = new_node(value);
 	new->previous = NULL;
 	new->first = new;
@@ -30,12 +30,15 @@ void	add_element(node **stack_a, int value)
 int main(void)
 {
 	node *stack_a;
+
+	stack_a = NULL;//always initialize with NULL otherwise hh
+	add_element(&stack_a, 5);
 	add_element(&stack_a, 4);
 	add_element(&stack_a, 3);
 	add_element(&stack_a, 2);
 	add_element(&stack_a, 1);
 	show_elements(stack_a);
+	printf("list size:%d\n",list_size(stack_a));
 	clear_elements(&stack_a);
-	show_elements(stack_a);
 	return 0;
 }

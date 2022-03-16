@@ -17,7 +17,7 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   Linked list: sequence of data structures which are connected via links:
   <ul>
   <li>Simple linked list: forward only</li>
-  <li>Doubly linkeed list: Forward and backward</li>
+  <li>Doubly linkeed list: Forward and backward (which we will use now)</li>
   <li>Circular linkeed list: forward, backwards and last item contains link of the first element as next, first has link to the last element as previous </li>
   </ul>
   <h4>Linked list conception:</h4>
@@ -33,12 +33,11 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   Operations on list:
   <ul>
     <li>new_node: creates a new node</li>
-    <li>add_node: adds node to the list</li>
-    <li>remove_node: removes node from the list</li>
+    <li>add_element: adds node to the list</li>
     <li>list_size: returns the size of the list</li>
-    <li>is_empty: returns 1 if list is empty</li>
+    <li>is_empty: returns 1 if list is empty(not sure if needed so far)</li>
     <li>clear_list: frees all nodes from the list</li>
-  
+    <li>Show_elements: display all the nodes on the list</li> 
   </ul>
   <h3>Second step: Implement the movees</h3>
   <ul>
