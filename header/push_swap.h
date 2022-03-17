@@ -23,5 +23,9 @@ void	add_element(node **stack_a, int value);
 void	show_elements(node *stack_a);//use ftprintf
 void	clear_elements(node **stack_a);//use ftprintf
 int	list_size(node *stack_a);
-node	*duplicate_node(node *old);
+node	*duplicate_node(node *old); //it's useless so far
+//move operations
+void	sa(node **stack_a);
+void	sb(node **stack_b); //basically the same as sa.c
+void	ss(node **stack_a, node **stack_b);
 #endif
