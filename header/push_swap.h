@@ -23,4 +23,5 @@ void	add_element(node **stack_a, int value);
 void	show_elements(node *stack_a);//use ftprintf
 void	clear_elements(node **stack_a);//use ftprintf
 int	list_size(node *stack_a);
+node	*duplicate_node(node *old);
 #endif
