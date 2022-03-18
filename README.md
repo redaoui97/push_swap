@@ -18,7 +18,7 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <ul>
   <li>Simple linked list: forward only</li>
   <li>Doubly linkeed list: Forward and backward (which we will use now)</li>
-  <li>Circular linkeed list: forward, backwards and last item contains link of the first element as next, first has link to the last element as previous </li>
+  <li>Circular linked list: forward, backwards and last item contains link of the first element as next, first has link to the last element as previous </li>
   </ul>
   <h4>Linked list conception:</h4>
   Struct : node
