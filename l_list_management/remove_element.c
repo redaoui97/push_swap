@@ -5,35 +5,21 @@
 void	remove_element(node **stack_a, int position)
 {
 	node	*ptr;
-
-	ptr = (*stack_a)->next;
-	if (*stack_a == (*stack_a)->first)
-	{
-		(*stack_a)->next->previous = NULL;
-		(*stack_a)->next->first
-	}
-	if else(*stack_a == (*stack_b)->last)
-	{
-		
-	}
-	else
-	{
-		while ((*stack_a)->position != position)
-			*stack_a = (*stack_a)->next;
-		(*stack_a)->previous->next = (*stack_a)->next;
-		(*stack_a)->next->previous = (*stack_a)->previous;
-	}
-	free (*stack_a);
-}
-
-static void	increment_rest_stack_(node **stack_a)
-{
-	node	*ptr;
+	node	*ptr_next;
 
 	ptr = *stack_a;
-	while (ptr)
+	if (*stack_a != (*stack_a)->first)//I can delete it 
+		return ;
+	if (list_size(*stack_a) == 1)
 	{
-		ptr->position--;
-		ptr = ptr->next;
+		free(*stack_a);
+		return ;
 	}
+	(*stack_a)->next->previous = NULL;
+	while (*stack_a)
+	{
+		(*stack_a)->next = ptr_next;
+		*stack_a = (*stack_a)->next;
+	}
+	free (ptr);
 }
