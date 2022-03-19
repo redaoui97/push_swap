@@ -16,9 +16,11 @@ void	remove_element(node **stack_a, int position)
 		return ;
 	}
 	(*stack_a)->next->previous = NULL;
+	(*stack_a)->next->first = ptr_next;
 	while (*stack_a)
 	{
-		(*stack_a)->next = ptr_next;
+		(*stack_a)->position--;
+		(*stack_a)->first = ptr_next;
 		*stack_a = (*stack_a)->next;
 	}
 	free (ptr);
