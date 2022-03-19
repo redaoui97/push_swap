@@ -27,7 +27,7 @@ void	add_element(node **stack_a, int value)
 	}
 	*stack_a = new;
 }
-/*int main(void)
+int main(void)
 {
 	node *stack_a;
 
@@ -39,6 +39,9 @@ void	add_element(node **stack_a, int value)
 	add_element(&stack_a, 1);
 	show_elements(stack_a);
 	printf("list size:%d\n",list_size(stack_a));
+	remove_element(&stack_a);
+	printf("list size:%d\n",list_size(stack_a));
+	show_elements(stack_a);	
 	clear_elements(&stack_a);
 	return 0;
-}*/
+}
