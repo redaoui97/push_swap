@@ -29,4 +29,6 @@ void	remove_element(node **stack_a);
 void	sa(node **stack_a);
 void	sb(node **stack_b); //basically the same as sa.c
 void	ss(node **stack_a, node **stack_b);
+void	pa(node **stack_a, node **stack_b);
+void	pb(node **stack_a, node **stack_b);
 #endif

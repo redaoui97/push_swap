@@ -13,7 +13,7 @@ void	sa(node **stack_a)
 	(*stack_a)->next->value = permu;
 }
 
-int main(void)
+/*int main(void)
 {
 	node *stack_a;
 	
@@ -29,4 +29,4 @@ int main(void)
 	show_elements(stack_a);
 	clear_elements(&stack_a);
 	return 0;
-}
+}*/

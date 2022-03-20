@@ -30,18 +30,29 @@ void	add_element(node **stack_a, int value)
 int main(void)
 {
 	node *stack_a;
-
+	node *stack_b;
+	
 	stack_a = NULL;//always initialize with NULL otherwise hh
-	add_element(&stack_a, 5);
+	stack_b = NULL;
 	add_element(&stack_a, 4);
 	add_element(&stack_a, 3);
 	add_element(&stack_a, 2);
 	add_element(&stack_a, 1);
+	add_element(&stack_a, 0);
 	show_elements(stack_a);
-	printf("list size:%d\n",list_size(stack_a));
-	remove_element(&stack_a);
-	printf("list size:%d\n",list_size(stack_a));
-	show_elements(stack_a);	
+	printf("-----------\n");
+	pb (&stack_a, &stack_b);
+	printf("---------a\n");
+	show_elements(stack_a);
+	printf("---------b\n");
+	show_elements(stack_b);
+	printf("----------------\n");	
+	pa (&stack_a, &stack_b);
+	printf("-------again\n");
+	show_elements(stack_a);
+	printf("---b\n");
+	show_elements(stack_b);
+	clear_elements(&stack_b);
 	clear_elements(&stack_a);
 	return 0;
 }

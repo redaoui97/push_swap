@@ -14,7 +14,7 @@ node	*duplicate_node(node *old)
 	return (new);
 }
 
-int main(void)
+/*int main(void)
 {
 	node *old;
 	node *new;
@@ -32,4 +32,4 @@ int main(void)
 	new = duplicate_node(old);
 	printf("address test:%p\nvalue:%d\nposition:%d\nnext:%p\nprevious:%p\nfirst:%p\nlast:%p",&test,new->value,new->position,new->next,new->previous,new->first,new->last);
 	return 0;
-}
+}*/
