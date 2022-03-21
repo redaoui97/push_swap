@@ -49,9 +49,9 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <li>(done)ra(rotate a):Shift up all elements of stack a by 1. The first element becomes the last one.</li>
   <li>(done)rb(rotate b):Shift up all elements of stack b by 1. The first element becomes the last one.</li>
   <li>(done)rr:ra and rb at the same time.</li>
-  <li>rra(reverse rotate a):Shift down all elements of stack a by 1. The last element becomes the first one.</li>
-  <li>rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
-  <li>rrr:rra and rrb at the same time.</li>
+  <li>(done)rra(reverse rotate a):Shift down all elements of stack a by 1. The last element becomes the first one.</li>
+  <li>(done)rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
+  <li>(done)rrr:rra and rrb at the same time.</li>
   </ul>
   <h3>Third step: Implement sorting algorithm</h3>
   <h4>I - picking the fastest sorting algorithm</h4>

@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 13:16:08 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/21 18:02:15 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,7 @@ void	pb(node **stack_a, node **stack_b);
 void	ra(node **stack_a);
 void	rb(node **stack_b);
 void	rr(node **stack_a, node **stack_b);
+void	rra(node **stack_a);
+void	rrb(node **stack_b);
+void	rrr(node **stack_a, node **stack_b);
 #endif
