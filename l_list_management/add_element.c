@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:52 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:20:54 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/21 12:32:57 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	add_element(node **stack_a, int value)
 	}
 	*stack_a = new;
 }
-int main(void)
+/*int main(void)
 {
 	node *stack_a;
 	node *stack_b;
@@ -67,4 +67,4 @@ int main(void)
 	clear_elements(&stack_b);
 	clear_elements(&stack_a);
 	return 0;
-}
+}*/

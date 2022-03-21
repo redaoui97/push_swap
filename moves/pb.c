@@ -6,11 +6,11 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:12 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:20:14 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/21 12:31:53 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"*
+#include "../header/push_swap.h"
 
 void	pb(node **stack_a, node **stack_b)
 {

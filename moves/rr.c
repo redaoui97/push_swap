@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   show_elements.c                                    :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:21:21 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 13:45:08 by rnabil           ###   ########.fr       */
+/*   Created: 2022/03/21 13:10:50 by rnabil            #+#    #+#             */
+/*   Updated: 2022/03/21 13:47:05 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-void show_elements(node *stack_a)
+//rr: ra and rb at the same time
+
+void	rr(node **stack_a, node **stack_b)
 {
-	while (stack_a)
-	{
-		printf("%p:%d:%d\n",stack_a,stack_a->position,stack_a->value);
-		stack_a = stack_a->next;
-	}
+	ra(&(*stack_a));
+	rb(&(*stack_b));
 }

@@ -6,26 +6,30 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:05:25 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:19:41 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/21 13:52:45 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
+
+//ra (rotate a): shifts up all elements of stack a by 1. The first element becomes the last one
 
 void	ra(node **stack_a)
 {
 	int		permut;
 	node	*ptr;
 	
-	permut = str->value;
-	while (ptr)
+	ptr = *stack_a;	
+	permut = (*stack_a)->value;
+	while (*stack_a)
 	{
-		if (ptr == ptr->last)
+		if (*stack_a == (*stack_a)->last)
 		{
-			ptr->value = permut;
+			(*stack_a)->value = permut;
 			break ;
 		}
-		ptr->value = ptr->next->value;
-		ptr = ptr->next;
+		(*stack_a)->value = (*stack_a)->next->value;
+		*stack_a = (*stack_a)->next;
 	}
+	*stack_a = ptr;
 }

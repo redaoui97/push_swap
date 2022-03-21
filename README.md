@@ -46,9 +46,9 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <li>(done)ss:sa and sb at the same time.</li>
   <li>(done)pa(push a):Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.</li>
   <li>(done)pb(push b):Take the first element at the top of a and put it at the top of b. Do nothing if a isempty.</li>
-  <li>ra(rotate a):Shift up all elements of stack a by 1. The first element becomes the last one.</li>
-  <li>rb(rotate b):Shift up all elements of stack b by 1. The first element becomes the last one.</li>
-  <li>rr:ra and rb at the same time.</li>
+  <li>(done)ra(rotate a):Shift up all elements of stack a by 1. The first element becomes the last one.</li>
+  <li>(done)rb(rotate b):Shift up all elements of stack b by 1. The first element becomes the last one.</li>
+  <li>(done)rr:ra and rb at the same time.</li>
   <li>rra(reverse rotate a):Shift down all elements of stack a by 1. The last element becomes the first one.</li>
   <li>rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
   <li>rrr:rra and rrb at the same time.</li>

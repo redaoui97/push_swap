@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:21:42 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/21 13:16:08 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,7 @@ void	sb(node **stack_b); //basically the same as sa.c
 void	ss(node **stack_a, node **stack_b);
 void	pa(node **stack_a, node **stack_b);
 void	pb(node **stack_a, node **stack_b);
+void	ra(node **stack_a);
+void	rb(node **stack_b);
+void	rr(node **stack_a, node **stack_b);
 #endif
