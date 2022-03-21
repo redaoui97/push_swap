@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:21:12 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:21:13 by rnabil           ###   ########.fr       */
+/*   Created: 2022/03/21 12:05:25 by rnabil            #+#    #+#             */
+/*   Updated: 2022/03/21 12:19:41 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// allocates a new node and returns a pointer to it
-
-node	*new_node(int value)
+void	ra(node **stack_a)
 {
-	node	*n;
-
-	n = (node *)malloc(sizeof(node));
-	if (!n)
-		return (NULL);
-	n->value = value;
-	n->next = NULL;
-	n->previous = NULL;
-	n->position = 0;
-	n->first = NULL;
-	n->last = NULL;
-	return (n);
+	int		permut;
+	node	*ptr;
+	
+	permut = str->value;
+	while (ptr)
+	{
+		if (ptr == ptr->last)
+		{
+			ptr->value = permut;
+			break ;
+		}
+		ptr->value = ptr->next->value;
+		ptr = ptr->next;
+	}
 }
