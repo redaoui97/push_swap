@@ -55,6 +55,6 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   </ul>
   <h3>Third step: Implement sorting algorithm</h3>
   <h4>I - picking the fastest sorting algorithm</h4>
+  	TAF: I need to set up makefile and make a function that creates and fills a stack 
   </p>
-  
-  
+    
