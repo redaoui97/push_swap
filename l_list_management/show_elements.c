@@ -16,7 +16,7 @@ void show_elements(node *stack_a)
 {
 	while (stack_a)
 	{
-		printf("%p:%d:%d\n",stack_a,stack_a->position,stack_a->value);
+		ft_printf("%p:%d:%d\n",stack_a,stack_a->position,stack_a->value);
 		stack_a = stack_a->next;
 	}
 }

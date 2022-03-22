@@ -17,7 +17,6 @@ int main(void)
 	node *stack_a;
 	node *stack_b;
 
-	ft_printf("hh");
 	stack_a = NULL;
 	stack_b = NULL;
 	add_element(&stack_a, 4);
@@ -37,7 +36,7 @@ int main(void)
 	
 	rrr(&stack_a, &stack_b);
 	show_elements(stack_a);
-	printf("--------------------");
+	ft_printf("--------------------\n");
 	show_elements(stack_b);
 	clear_elements(&stack_a);
 	clear_elements(&stack_b);

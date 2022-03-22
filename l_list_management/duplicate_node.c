@@ -25,23 +25,3 @@ node	*duplicate_node(node *old)
 	new->last = old->last;
 	return (new);
 }
-
-/*int main(void)
-{
-	node *old;
-	node *new;
-	node test;
-	
-	old = new_node(0);
-	//3mr
-	old->value = 69;
-	old->position = 96;
-	old->next = &test;
-	old->previous = &test;
-	old->first = &test;
-	old->last = &test;
-	//sala t3mar
-	new = duplicate_node(old);
-	printf("address test:%p\nvalue:%d\nposition:%d\nnext:%p\nprevious:%p\nfirst:%p\nlast:%p",&test,new->value,new->position,new->next,new->previous,new->first,new->last);
-	return 0;
-}*/

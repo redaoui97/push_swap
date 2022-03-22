@@ -38,26 +38,3 @@ void	remove_element(node **stack_a)
 	*stack_a = ptr_next;
 	free (ptr);
 }
-
-/*int main(void)
-{
-	node *stack_a;
-
-	stack_a = NULL;
-	add_element(&stack_a, 5);
-	add_element(&stack_a, 4);
-	add_element(&stack_a, 3);
-	add_element(&stack_a, 2);
-	add_element(&stack_a, 1);
-	add_element(&stack_a, 0);
-	show_elements(stack_a);
-	remove_element(&stack_a);
-	remove_element(&stack_a);
-	remove_element(&stack_a);
-	remove_element(&stack_a);
-	remove_element(&stack_a);
-	remove_element(&stack_a);
-	printf("---------------------\n");
-	show_elements(stack_a);
-	return 0;
-}*/

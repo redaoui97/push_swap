@@ -42,8 +42,8 @@ size_t	ft_strlen(const char *str);
 //functions nodes implementation
 node	*new_node(int value);
 void	add_element(node **stack_a, int value);
-void	show_elements(node *stack_a);//use ftprintf
-void	clear_elements(node **stack_a);//use ftprintf
+void	show_elements(node *stack_a);
+void	clear_elements(node **stack_a);
 int	list_size(node *stack_a);
 node	*duplicate_node(node *old); //it's useless so far
 void	remove_element(node **stack_a);
