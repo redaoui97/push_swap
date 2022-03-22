@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/push_swap.h"
 
 int	print_nbr_unsigned(unsigned int n)
 {

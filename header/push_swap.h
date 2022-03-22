@@ -16,6 +16,7 @@
 //includes, remember to remove stdio later
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <stdio.h>
 
 //linked list
@@ -28,7 +29,16 @@ typedef struct nodes
 	struct nodes	*first;
 	struct nodes	*last;
 } node;
-
+//Functions ft_printf
+int	ft_printf(const char *f, ...);
+int	print_addresse(unsigned long int adr);
+int	print_nbr(int n);
+int	print_hex_lower(unsigned int nbr);
+int	print_hex_upper(unsigned int nbr);
+int	print_nbr_unsigned(unsigned int nbr);
+int	print_str(char *str);
+int	print_char(char chr);
+size_t	ft_strlen(const char *str);
 //functions nodes implementation
 node	*new_node(int value);
 void	add_element(node **stack_a, int value);

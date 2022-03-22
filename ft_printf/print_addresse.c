@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/push_swap.h"
 
 static	int	nbr_size(unsigned long int nbr)
 {

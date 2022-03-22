@@ -10,15 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "header/push_swap.h"
 
-void push_swap(node *stack_a, node *stack_b)
-{
-	(void*)stack_a;
-	(void*)stack_b;
-}
 int main(void)
 {
+	node *stack_a;
+	node *stack_b;
 
+	ft_printf("hh");
+	stack_a = NULL;
+	stack_b = NULL;
+	add_element(&stack_a, 4);
+	add_element(&stack_b, 4);
+	
+	add_element(&stack_a, 3);
+	add_element(&stack_b, 3);
+
+	add_element(&stack_a, 2);
+	add_element(&stack_b, 2);
+
+	add_element(&stack_a, 1);
+	add_element(&stack_b, 1);
+
+	add_element(&stack_a, 0);
+	add_element(&stack_b, 0);
+	
+	rrr(&stack_a, &stack_b);
+	show_elements(stack_a);
+	printf("--------------------");
+	show_elements(stack_b);
+	clear_elements(&stack_a);
+	clear_elements(&stack_b);
 	return 0;
 }
