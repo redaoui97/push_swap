@@ -53,8 +53,8 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <li>(done)rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
   <li>(done)rrr:rra and rrb at the same time.</li>
   </ul>
-  <h3>Third step: Implement sorting algorithm</h3>
-  <h4>I - picking the fastest sorting algorithm</h4>
-  	TAF: I need to set up makefile and make a function that creates and fills a stack 
+  	<h3>Third step: Implement sorting algorithm</h3>
+  		<h4>I - picking the fastest sorting algorithm</h4>
+		*work inspired from <a href=https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a>here</a> 
   </p>
     
