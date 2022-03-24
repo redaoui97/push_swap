@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 18:02:15 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/24 15:41:46 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,36 @@
 //linked list
 typedef struct nodes
 {
-	int	position;
-	int	value;
+	int				position;
+	int				value;
+	int				lis;
+	int				bool_lis;
 	struct nodes	*previous;
 	struct nodes	*next;
 	struct nodes	*first;
 	struct nodes	*last;
 } node;
+
 //Functions ft_printf
-int	ft_printf(const char *f, ...);
-int	print_addresse(unsigned long int adr);
-int	print_nbr(int n);
-int	print_hex_lower(unsigned int nbr);
-int	print_hex_upper(unsigned int nbr);
-int	print_nbr_unsigned(unsigned int nbr);
-int	print_str(char *str);
-int	print_char(char chr);
+int		ft_printf(const char *f, ...);
+int		print_addresse(unsigned long int adr);
+int		print_nbr(int n);
+int		print_hex_lower(unsigned int nbr);
+int		print_hex_upper(unsigned int nbr);
+int		print_nbr_unsigned(unsigned int nbr);
+int		print_str(char *str);
+int		print_char(char chr);
 size_t	ft_strlen(const char *str);
+
 //functions nodes implementation
 node	*new_node(int value);
 void	add_element(node **stack_a, int value);
 void	show_elements(node *stack_a);
 void	clear_elements(node **stack_a);
-int	list_size(node *stack_a);
+int		list_size(node *stack_a);
 node	*duplicate_node(node *old); //it's useless so far
 void	remove_element(node **stack_a);
+
 //move operations
 void	sa(node **stack_a);
 void	sb(node **stack_b); //basically the same as sa.c
