@@ -31,7 +31,7 @@ $(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_prinf)
+	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf)
 
 fclean: clean
 	rm -f $(NAME)
