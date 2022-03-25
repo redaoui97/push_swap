@@ -59,6 +59,8 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
 		Cases: 
 		<ul>
 			<li>3 random numbers: There are 5 possible cases for 3 random numbers so we can use a naive sorting algorithm to sort the list in few steps, by manually sorting them. (I need to add an image here)</li>
-			<li>5 random numbers: </li> 
+	<li>5 random numbers: </li> 
+	------------------<br>
+	1-Find the LIS (longest incresing subsequence)
   </p>
     
