@@ -12,11 +12,14 @@ FUNCTIONS_printf = ft_printf/ft_printf ft_printf/ft_strlen \
 		   ft_printf/print_hex_lower ft_printf/print_hex_upper \
 		   ft_printf/print_nbr ft_printf/print_nbr_unsigned \
 		   ft_printf/print_str
-FUNCTIONS_algo = push_swap
+FUNCTIONS_algo = push_swap algo/calculate_lis
+FUNCTIONS_src = src/atoi
+
 OBJS_list = $(FUNCTIONS_list_management:=.o)
 OBJS_moves = $(FUNCTIONS_moves:=.o)
 OBJS_algo = $(FUNCTIONS_algo:=.o)
 OBJS_printf = $(FUNCTIONS_printf:=.o)
+OBJS_src = $(FUNCTIONS_src:=.o)
 NAME = push_swap.a
 AR = ar rc
 
@@ -24,14 +27,14 @@ AR = ar rc
 
 all : $(NAME)
 
-$(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf)
-	$(AR) $(NAME) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf)
+$(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
+	$(AR) $(NAME) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
 
 %.o: %.c header/push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf)
+	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
 
 fclean: clean
 	rm -f $(NAME)

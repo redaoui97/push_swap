@@ -6,36 +6,25 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:30 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:21:31 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/26 18:45:34 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header/push_swap.h"
 
-int main(void)
+int main(int argc, char *argv[])
 {
 	node *stack_a;
 	node *stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
+
+	if (argc < 2)
+		return (0);//IDK there was a condition like this when I used to play with argc
+		
 	add_element(&stack_a, 4);
-	add_element(&stack_b, 4);
-	
-	add_element(&stack_a, 3);
-	add_element(&stack_b, 3);
-
-	add_element(&stack_a, 2);
-	add_element(&stack_b, 2);
-
-	add_element(&stack_a, 1);
-	add_element(&stack_b, 1);
-
-	add_element(&stack_a, 0);
-	add_element(&stack_b, 0);
-	
-	rrr(&stack_a, &stack_b);
-	show_elements(stack_a);
+		
 	ft_printf("--------------------\n");
 	show_elements(stack_b);
 	clear_elements(&stack_a);

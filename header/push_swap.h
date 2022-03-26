@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/24 15:41:46 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/26 18:26:23 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct nodes
 	int				value;
 	int				lis;
 	int				bool_lis;
+	int				moves_count;
 	struct nodes	*previous;
 	struct nodes	*next;
 	struct nodes	*first;
