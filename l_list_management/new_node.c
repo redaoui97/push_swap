@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:12 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/29 18:37:50 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/29 21:04:27 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ node	*new_node(int value)
 	n->first = NULL;
 	n->last = NULL;
 	n->lis = -1;
-	n->bool_lis = -1;
+	n->bool_lis = 0;
 	n->moves_count = -1;
 	return (n);
 }
