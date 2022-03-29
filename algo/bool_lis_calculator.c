@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   bool_lis_calculator.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:21:12 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/29 18:37:50 by rnabil           ###   ########.fr       */
+/*   Created: 2022/03/29 18:42:15 by rnabil            #+#    #+#             */
+/*   Updated: 2022/03/29 18:44:12 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// allocates a new node and returns a pointer to it
-
-node	*new_node(int value)
+void	bool_lis_calculator(node **stack_a)
 {
-	node	*n;
-
-	n = (node *)malloc(sizeof(node));
-	if (!n)
-		return (NULL);
-	n->bool_lis = 0;
-	n->value = value;
-	n->next = NULL;
-	n->previous = NULL;
-	n->position = 0;
-	n->first = NULL;
-	n->last = NULL;
-	n->lis = -1;
-	n->bool_lis = -1;
-	n->moves_count = -1;
-	return (n);
+	ft_printf("%d",(*stack_a)->position);
 }
