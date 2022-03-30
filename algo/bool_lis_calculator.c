@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:42:15 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/29 21:26:09 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/03/30 12:49:07 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static node	*get_lis(node *stack_a)
 	ptr = stack_a;
 	while (stack_a)
 	{
-		if (stack_a->lis > ptr->lis)
+		if (stack_a->lis >= ptr->lis)
 			ptr = stack_a;
 		stack_a = stack_a->next;
 	}
@@ -39,7 +39,7 @@ void	bool_lis_calculator(node **stack_a)
 	value = (*stack_a)->value;
 	while (i < list_size(ptr_first))
 	{
-		if ((*stack_a)->value > value)
+		if ((*stack_a)->value >= value)
 		{
 			value = (*stack_a)->value;
 			(*stack_a)->bool_lis++;
