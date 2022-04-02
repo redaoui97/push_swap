@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/29 18:45:05 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 16:04:35 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ void	rrr(node **stack_a, node **stack_b);
 //algo functins
 void	calculate_lis(node **stack_a);
 void	bool_lis_calculator(node **stack_a);
+void	send_zeros(node **stack_a, node **stack_b);
 
 //src functions
 int		ft_atoi(char *str);
+
 #endif
