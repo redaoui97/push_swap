@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:30 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 16:44:18 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 17:55:39 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int main(int argc, char *argv[])
 	bool_lis_calculator(&stack_a);
 	show_elements(stack_a);
 	
-	pb (&stack_a, &stack_b);
-	pb (&stack_a, &stack_b);	
-	rr(&stack_a, &stack_b);
+	rrr(&stack_a,&stack_b);
 	show_elements(stack_a);
 	show_elements(stack_b);
 
