@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:23 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 13:29:08 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 15:54:11 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 void	sb(node **stack_b)
 {
-	sa(&(*stack_b));
-	ft_printf("sa\n");
+	int	permu;
+
+	if (list_size(*stack_b) < 2)
+		return;
+	permu = (*stack_b)->value;
+	(*stack_b)->value = (*stack_b)->next->value;
+	(*stack_b)->next->value = permu;
+	ft_printf("sb\n");
 }

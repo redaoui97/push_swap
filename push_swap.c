@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:30 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 13:25:01 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 16:00:30 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,16 @@ int main(int argc, char *argv[])
 	
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
 
 	show_elements(stack_a);
 	show_elements(stack_b);
-	
+
+	ss(&stack_a,&stack_b);
+
+	show_elements(stack_a);
+	show_elements(stack_b);
+
 	clear_elements(&stack_a);
 	clear_elements(&stack_b);
 	return 0;
