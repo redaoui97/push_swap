@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:03:24 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 16:23:12 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 18:33:24 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	send_zeros(node **stack_a, node **stack_b)
 {
 	node	*ptr_start;
+	int		size;
 	int		i;
 
 	i = 0;
+	size = list_size(*stack_a);
 	ptr_start = *stack_a;
-	while (i < list_size(*stack_a))
+	while (i < size)
 	{
 		if ((*stack_a)->bool_lis == 1)
 		{
