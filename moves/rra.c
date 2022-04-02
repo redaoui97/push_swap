@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 14:42:20 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 17:57:31 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:27:33 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	rra(node **stack_a)
 	}
 	*stack_a = ptr;
 	(*stack_a)->value = permut;
+	ft_printf("rra\n");
 }

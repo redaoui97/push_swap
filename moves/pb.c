@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:12 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:31:53 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:24:23 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	pb(node **stack_a, node **stack_b)
 {
 	add_element(&*stack_b, (*stack_a)->value);
 	remove_element(&*stack_a);
+	ft_printf("pb\n");
 }

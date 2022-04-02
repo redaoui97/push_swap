@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:57:39 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 17:59:08 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:27:50 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	rrb(node **stack_b)
 	}
 	*stack_b = ptr;
 	(*stack_b)->value = permut;
+	ft_printf("rrb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:19:58 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 18:03:50 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:28:45 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	sa(node **stack_a)
 	permu = (*stack_a)->value;
 	(*stack_a)->value = (*stack_a)->next->value;
 	(*stack_a)->next->value = permu;
+	ft_printf("sa\n");
 }
