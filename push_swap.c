@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:30 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 18:18:41 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/03 18:21:01 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ int main(int argc, char *argv[])
 	{
 		add_element(&stack_a, ft_atoi(argv[i++]));
 	}
+	ft_printf("----------------PUSH_SWAP--------------------\n");
 	calculate_lis(&stack_a);	
 	bool_lis_calculator(&stack_a);
 	show_elements(stack_a);
 	send_zeros(&stack_a,&stack_b);
+//	calculate_moves(&stack_b);
 
 	show_elements(stack_a);
 	show_elements(stack_b);

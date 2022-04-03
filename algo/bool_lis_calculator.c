@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:42:15 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/30 12:49:07 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/03 16:19:48 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static node	*get_lis(node *stack_a)
 			ptr = stack_a;
 		stack_a = stack_a->next;
 	}
-	ft_printf("\n-----------%d-----------\n",ptr->value);
 	return (ptr);
 }
 

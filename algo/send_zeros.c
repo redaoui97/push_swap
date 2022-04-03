@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:03:24 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 18:33:24 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/03 16:14:22 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	send_zeros(node **stack_a, node **stack_b)
 		if ((*stack_a)->bool_lis == 1)
 		{
 			ra(&*stack_a);
-			ft_printf("%d\n",(*stack_a)->bool_lis);
 		}
 		else
 		{
