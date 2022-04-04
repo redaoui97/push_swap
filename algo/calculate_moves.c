@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 18:40:46 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/03 18:20:56 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/04 15:19:35 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ static void	first_calculation(node **stack_b)
 
 	count = 0;
 	size = list_size(*stack_b);
-	ft_printf("%d\n",size);
 	first_ptr = *stack_b;
-	while (count <= (size / 2))
+	while (count < (size / 2))
 	{
 		(*stack_b)->moves_count = count++;
 		*stack_b = (*stack_b)->next;
@@ -40,7 +39,31 @@ static void	first_calculation(node **stack_b)
 	*stack_b = first_ptr;
 }
 
-void	calculate_moves(node **stack_b)
+int void	calc_moves_a(int	value, node **stack_a)
+{
+		
+}
+
+static void	second_calculation(node **stack_b, node **stack_b)
+{
+	int		count;
+	int		size;
+	node	*first_ptr;
+	node	*first_ptr_a;
+
+	count = 0;
+	size = list_size(*stack_b);
+	first_ptr = *stack_b;
+	while (*stack_b)
+	{
+		(*stack_b)->moves_count += calc_moves_a((*stack_b)->value, first_ptr_a);
+		*stack_b = (*stack_b)->next;
+	}
+	*stack_b = first_ptr;
+}
+
+void	calculate_moves(node **stack_a, node **stack_b)
 {
 	first_calculation(&*stack_b);
+	second_calculation(&*stack_a, &*stack_b);
 }
