@@ -6,40 +6,11 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 18:40:46 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/08 02:24:22 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:38:38 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-static void	first_calculation(node **stack_b)
-{
-	int		count;
-	int		size;
-	node	*first_ptr;
-
-	count = 0;
-	size = list_size(*stack_b);
-	first_ptr = *stack_b;
-	if (size == 1)
-		(*stack_b)->moves_count = 1;
-	while (count < (size / 2))
-	{
-		(*stack_b)->moves_count = count++;
-		*stack_b = (*stack_b)->next;
-	}
-	if (!(size % 2) && size > 2)
-	{
-		(*stack_b)->moves_count = count--;
-		*stack_b = (*stack_b)->next;
-	}
-	while (count > 0)
-	{
-		(*stack_b)->moves_count = count--;
-		*stack_b = (*stack_b)->next;
-	}
-	*stack_b = first_ptr;
-}
 
 /*int void	calc_moves_a(int	value, node **stack_a)
 {

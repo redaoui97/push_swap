@@ -12,7 +12,8 @@ FUNCTIONS_printf = ft_printf/ft_printf ft_printf/ft_strlen \
 		   ft_printf/print_hex_lower ft_printf/print_hex_upper \
 		   ft_printf/print_nbr ft_printf/print_nbr_unsigned \
 		   ft_printf/print_str
-FUNCTIONS_algo = push_swap algo/calculate_lis algo/bool_lis_calculator algo/send_zeros algo/calculate_moves
+FUNCTIONS_algo = push_swap algo/calculate_lis algo/bool_lis_calculator algo/send_zeros algo/calculate_moves \
+		   algo/first_calculation algo/second_calculation
 FUNCTIONS_src = src/atoi
 
 OBJS_list = $(FUNCTIONS_list_management:=.o)
