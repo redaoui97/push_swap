@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 18:40:46 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/04 15:19:35 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/08 01:51:54 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ static void	first_calculation(node **stack_b)
 	*stack_b = first_ptr;
 }
 
-int void	calc_moves_a(int	value, node **stack_a)
+/*int void	calc_moves_a(int	value, node **stack_a)
 {
 		
 }
 
-static void	second_calculation(node **stack_b, node **stack_b)
+static void	second_calculation(node **stack_a, node **stack_b)
 {
 	int		count;
 	int		size;
@@ -61,9 +61,9 @@ static void	second_calculation(node **stack_b, node **stack_b)
 	}
 	*stack_b = first_ptr;
 }
-
+*/
 void	calculate_moves(node **stack_a, node **stack_b)
 {
 	first_calculation(&*stack_b);
-	second_calculation(&*stack_a, &*stack_b);
+	//second_calculation(&*stack_a, &*stack_b);
 }
