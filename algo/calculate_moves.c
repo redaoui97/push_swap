@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 18:40:46 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/08 02:07:07 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:24:22 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	first_calculation(node **stack_b)
 	count = 0;
 	size = list_size(*stack_b);
 	first_ptr = *stack_b;
+	if (size == 1)
+		(*stack_b)->moves_count = 1;
 	while (count < (size / 2))
 	{
 		(*stack_b)->moves_count = count++;
