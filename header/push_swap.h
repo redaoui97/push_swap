@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/10 22:44:08 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/12 15:43:10 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	clear_elements(node **stack_a);
 int		list_size(node *stack_a);
 node	*duplicate_node(node *old); //it's useless so far
 void	remove_element(node **stack_a);
+void	set_min_first(node **stack_a);
 
 //move operations
 void	sa(node **stack_a);

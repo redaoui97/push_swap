@@ -6,12 +6,13 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 02:31:54 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/10 22:51:11 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/12 15:43:19 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
+/*
 //calculate the moves necessary to above the right element in stack_a
 static int	calculate_superior (node *stack_a, int value)
 {
@@ -51,71 +52,37 @@ static int calculate_inferior (node *stack_a, int value)
 	 }
 	 ft_printf("%d|%d\n",value,count);
 	 return (count);
-}
+}*/
 
-static void	set_min_first(node **stack_a)
+static node	*get_next_number(int value, node *stack_a)
 {
-	node	*first_node;
-	int		min;
-	int		position;
-	int		i;
+	node	*next;
 
-	first_node = *stack_a;
-	min = (*stack_a)->value;
-	position = 1;
-	while (*stack_a)
+	next = stack_a;
+	while (stack_a)
 	{
-		if ((*stack_a)->value < min)
-		{
-			min = (*stack_a)->value;
-			position = i;
-			ft_printf("---%d\n",min);
-		}
-		i++;
-		*stack_a = (*stack_a)->next;
+		if (stack_a->value > value && stack_a->value < next->value)
+			next = stack_a;
+		stack_a = stack_a->next;
 	}
-	*stack_a = first_node;
-	while (*stack_a && (*stack_a)->value > min)
-          {
-              ft_printf("hh");
-              ra(&*stack_a);
-              *stack_a = (*stack_a)->next;
-          }
-	/*if ((position / list_size(*stack_a)) <= 0.5)
-	{
-		while (*stack_a && (*stack_a)->value > min)
-		{
-			ft_printf("hh");
-			ra(&*stack_a);
-			*stack_a = (*stack_a)->next;
-		}
-	}
-	else
-	{
-		while(*stack_a && (*stack_a)->value > min)
-		{
-			rra(&*stack_a);
-			*stack_a = (*stack_a)->next;
-		}
-	}*/
-	*stack_a = first_node;
+	return (next);
 }
 
 void second_calculation(node **stack_a, node **stack_b)
 {
 	node	*first_node;
+	node	*next;
 
 	first_node = *stack_b;
-//	set_min_first(&*stack_a);
 	while (*stack_b)
 	{
 		//WAAAAAAAAAAAAAAA ADD += 
 		
-
-		if (calculate_superior(*stack_a,(*stack_b)->value) > calculate_inferior(*stack_a,(*stack_b)->value))
-			(*stack_b)->moves_count = calculate_inferior(*stack_a, (*stack_b)->value);
+		next = get_next_number((*stack_b)->value, *stack_a);
+		if ((next->position + 1)/list_size(*stack_a) > 0.5)
+			(*stack_b)->moves_count = next->position;
 		else
-			(*stack_b)->moves_count = calculate_superior(*stack_a, (*stack_b)->value);
+			(*stack_b)->moves_count = list_size(*stack_a) - next->position;
 		*stack_b = (*stack_b)->next;
 		ft_printf("--------\n");
 	}

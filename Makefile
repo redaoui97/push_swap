@@ -3,7 +3,7 @@ Flag = -Wall -Wextra -Werror
 FUNCTIONS_list_management = l_list_management/add_element l_list_management/clear_elements \
 	    l_list_management/duplicate_node l_list_management/list_size \
 	    l_list_management/new_node l_list_management/remove_element \
-	    l_list_management/show_elements
+	    l_list_management/show_elements l_list_management/set_min_first
 FUNCTIONS_moves = moves/pa moves/pb moves/ra moves/rb moves/rr \
 		  moves/rra moves/rrb moves/rrr moves/sa moves/sb \
 		  moves/ss
