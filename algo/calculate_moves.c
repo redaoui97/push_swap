@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 18:40:46 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/10 22:45:29 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/13 17:46:15 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ static void	second_calculation(node **stack_a, node **stack_b)
 */
 void	calculate_moves(node **stack_a, node **stack_b)
 {
-//	first_calculation(&*stack_b);
-	second_calculation(&*stack_a, &*stack_b);
+	first_calculation(&*stack_b);
+zsh:1: command not found: q
 }

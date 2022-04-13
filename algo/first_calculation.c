@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 02:27:20 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/08 03:15:07 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/13 17:46:07 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void first_calculation(node **stack_b)
     int     size;
     node    *first_ptr;
 
-    count = 1;
+    count = 0;
     size = list_size(*stack_b);
     first_ptr = *stack_b;
     if (size == 1)
