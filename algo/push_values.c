@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:33:15 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/15 12:37:34 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/15 13:10:27 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,25 @@ static int	get_min_moves(node *stack_b)
 	return (min);
 }
 
+static int  get_min_index(node *stack_b)
+{
+    int min;
+	int	position;
+
+    min = stack_b->moves_count;
+	position = stack_b->position;
+    while (stack_b)
+    {
+        if (stack_b->moves_count < min)
+		{
+			position = stack_b->position;
+            min = stack_b->moves_count;
+		}
+		stack_b = stack_b->next;
+    }
+    return (position);
+}
+
 static void	classic_sort(node **stack_a, node **stack_b)
 {
 	node	*first_node_a;
@@ -62,23 +81,24 @@ static void	classic_sort(node **stack_a, node **stack_b)
 	while (i < list_size(first_node_b))
 	{
 		j = 0;
-		while ((*stack_b)->moves_count != get_min_moves(*stack_b) && j < 20)
+		while (j < get_min_index(*stack_b))
 		{
 			rb(&*stack_b);
-			ft_printf("%d-%d\n",(*stack_b)->moves_count, get_min_moves(*stack_b));
 			j++;
 		}
+		j = 0;
 		next = get_next_number((*stack_b)->value, &*stack_a);
-		while ((*stack_a)->value != next->value && i < 20)
+		while (j < next->position)
 		{
-			ft_printf("%d-%d\n",next->value, (*stack_a)->value);
-			i++;
-			//ra(&*stack_a);
+			ra(&*stack_a);
+			j++;
 		}
 		pa(&*stack_a, &*stack_b);
 		*stack_a = (*stack_a)->first;
 		*stack_b = (*stack_b)->first;
 		i++;
+		show_elements(*stack_a);
+		show_elements(*stack_b);
 	}
 }
 
