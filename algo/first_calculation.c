@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 02:27:20 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/13 17:52:14 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/15 09:29:58 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,24 @@
 void first_calculation(node **stack_b)
 {
     int     count;
-    int     size;
     node    *first_ptr;
 
-    count = 0;
-    size = list_size(*stack_b);
+    count = 1;
     first_ptr = *stack_b;
-    if (size == 1)
+    if (list_size(first_ptr) == 1)
         (*stack_b)->moves_count = 1;
-    while (count < (size / 2))
+    while (count <= (list_size(first_ptr) / 2))
     {
-		ft_printf("%d\n",count);
         (*stack_b)->moves_count = count++;
         *stack_b = (*stack_b)->next;
     }
-    if ((size % 2) == 1 && size > 2)
+    if ((list_size(first_ptr) % 2) == 1 && list_size(first_ptr) > 2)
     {
-		ft_printf("--------%d\n",count);
         (*stack_b)->moves_count = count;
         *stack_b = (*stack_b)->next;
     }
     while (count > 0 && *stack_b)
     {
-		ft_printf("%d\n",count);
         (*stack_b)->moves_count = count--;
         *stack_b = (*stack_b)->next;
     }
