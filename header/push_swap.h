@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/04 14:49:43 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/04/15 09:36:42 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	clear_elements(node **stack_a);
 int		list_size(node *stack_a);
 node	*duplicate_node(node *old); //it's useless so far
 void	remove_element(node **stack_a);
+void	set_min_first(node **stack_a);
 
 //move operations
 void	sa(node **stack_a);
@@ -71,6 +72,9 @@ void	calculate_lis(node **stack_a);
 void	bool_lis_calculator(node **stack_a);
 void	send_zeros(node **stack_a, node **stack_b);
 void	calculate_moves(node **stack_a, node **stack_b);
+void	first_calculation(node **stack_b);
+void	second_calculation(node **stack_a, node **stack_b);
+void	push_values(node **stack_a, node **stack_b);
 
 //src functions
 int		ft_atoi(char *str);

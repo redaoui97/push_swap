@@ -1,0 +1,2 @@
+with -+ values the last element's move count in stack_b is always -1 (IT'S SOMETHING ABOUT PAIR AND IMPAIRE NUMBERSi in stack_b) (4 values in b working / 3 not )
+
