@@ -16,14 +16,12 @@
 {
 		
 }
-
 static void	second_calculation(node **stack_a, node **stack_b)
 {
 	int		count;
 	int		size;
 	node	*first_ptr;
 	node	*first_ptr_a;
-
 	count = 0;
 	size = list_size(*stack_b);
 	first_ptr = *stack_b;
