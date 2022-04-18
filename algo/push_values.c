@@ -97,9 +97,11 @@ static void	classic_sort(node **stack_a, node **stack_b)
 		*stack_a = (*stack_a)->first;
 		*stack_b = (*stack_b)->first;
 		i++;
-		show_elements(*stack_a);
-		show_elements(*stack_b);
 	}
+	*stack_a = (*stack_a)->first;
+	*stack_b = (*stack_b)->first;
+	show_elements(*stack_a);
+	show_elements(*stack_b);
 }
 
 void	push_values(node **stack_a, node **stack_b)
