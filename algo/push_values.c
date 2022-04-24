@@ -78,6 +78,10 @@ static void	classic_sort(node **stack_a, node **stack_b)
 	i = 0;
 	first_node_a = *stack_a;
 	first_node_b = *stack_b;
+	while (*stack_b)
+	{
+		
+	}
 	while (i < list_size(first_node_b))
 	{
 		j = 0;
@@ -103,26 +107,22 @@ static void	classic_sort(node **stack_a, node **stack_b)
 	show_elements(*stack_a);
 	show_elements(*stack_b);
 }
-
-void	push_values(node **stack_a, node **stack_b)
+void	fast_rotation(node **stack, int value, int moves, int side)
 {
 	
-	classic_sort(&*stack_a, &*stack_b);
-	/*node	*first_node_a;
-	node	*first_node_b;
-	float	position_a;
-	float	position_b;
-	node	*next;
+}
+void	push_values(node **stack_a, node **stack_b)
+{
+	int	side_a;
+	int	side_b;
+	int	moves_a;
+	int	moves_b;
+	node	first_node_b;
 
-	first_node_a = *stack_a;
 	first_node_b = *stack_b;
-	while(*stack_b)
+	while (*stack_b)
 	{
-		next = get_next_number((*stack_b)->value, &*stack_a);
-		position_a = (next->position + 1) / list_size(first_node_a);
-		position_b = ((*stack_b)->position / list_size(first_node_b);
-		if(position_a <= 0.5)
-			
-
-	}*/
+		if ((float)((*stack_b)->position/list_size((*stack_b)->first)) > 0.5)	
+		*stack_b = (*stack_b)->next;
+	}		
 }
