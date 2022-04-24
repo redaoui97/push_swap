@@ -107,10 +107,11 @@ static void	classic_sort(node **stack_a, node **stack_b)
 	show_elements(*stack_a);
 	show_elements(*stack_b);
 }
-void	fast_rotation(node **stack, int value, int moves, int side)
+void	up_element(int value, node **stack)
 {
 	
 }
+
 void	push_values(node **stack_a, node **stack_b)
 {
 	int	side_a;
@@ -124,15 +125,17 @@ void	push_values(node **stack_a, node **stack_b)
 	while (*stack_b)
 	{
 		next = get_next_number((*stack_b)->value, &*stack_a);
-		if ((float)((*stack_b)->position/list_size((*stack_b)->first)) > 0.5)
+		if ((float)((*stack_b)->position/list_size((*stack_b)->first)) < 0.5)
 		{
-			moves_b = 
-			side_b = 1
+			moves_b = list_size((*stack_b)->first) - (*stack_b)->position;
+			side_b = 1;
 		}
 		else
 		{
+			moves_b = (*stack_b)->positon;
 			side_b = 0;
 		}
 		*stack_b = (*stack_b)->next;
+		
 	}		
 }
