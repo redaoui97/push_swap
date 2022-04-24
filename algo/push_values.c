@@ -117,12 +117,22 @@ void	push_values(node **stack_a, node **stack_b)
 	int	side_b;
 	int	moves_a;
 	int	moves_b;
-	node	first_node_b;
+	node	*first_node_b;
+	node	*next;
 
 	first_node_b = *stack_b;
 	while (*stack_b)
 	{
-		if ((float)((*stack_b)->position/list_size((*stack_b)->first)) > 0.5)	
+		next = get_next_number((*stack_b)->value, &*stack_a);
+		if ((float)((*stack_b)->position/list_size((*stack_b)->first)) > 0.5)
+		{
+			moves_b = 
+			side_b = 1
+		}
+		else
+		{
+			side_b = 0;
+		}
 		*stack_b = (*stack_b)->next;
 	}		
 }
