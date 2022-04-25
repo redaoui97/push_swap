@@ -34,37 +34,18 @@ static node *get_next_number(int value, node **stack_a)
     return (next);
 }
 
-static int	get_min_moves(node *stack_b)
+static node	*get_min_moves(node *stack_b)
 {
-	int	min;
+	node	*min;
 
-	min = stack_b->moves_count;
+	min = stack_b;
 	while (stack_b)
 	{
-		if (stack_b->moves_count < min)
-			min = stack_b->moves_count;
+		if (stack_b->moves_count < min->moves_count)
+			min = stack_b;
 		stack_b = stack_b->next;
 	}
 	return (min);
-}
-
-static int  get_min_index(node *stack_b)
-{
-    int min;
-	int	position;
-
-    min = stack_b->moves_count;
-	position = stack_b->position;
-    while (stack_b)
-    {
-        if (stack_b->moves_count < min)
-		{
-			position = stack_b->position;
-            min = stack_b->moves_count;
-		}
-		stack_b = stack_b->next;
-    }
-    return (position);
 }
 
 static void	classic_sort(node **stack_a, node **stack_b)
@@ -120,11 +101,14 @@ void	push_values(node **stack_a, node **stack_b)
 	int	moves_b;
 	node	*first_node_b;
 	node	*next;
+	node	*min;
 
-	first_node_b = *stack_b;
 	while (*stack_b)
 	{
+		min = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
+		check_moves(&side_b, &moves_b);
+		check_moves(&side_a, &moves_a);
 		if ((float)((*stack_b)->position/list_size((*stack_b)->first)) < 0.5)
 		{
 			moves_b = list_size((*stack_b)->first) - (*stack_b)->position;
@@ -135,7 +119,7 @@ void	push_values(node **stack_a, node **stack_b)
 			moves_b = (*stack_b)->positon;
 			side_b = 0;
 		}
-		*stack_b = (*stack_b)->next;
+		*stack_b = (*stack_b)->first;
 		
 	}		
 }
