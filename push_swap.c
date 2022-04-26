@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	show_elements(stack_a);
 	send_zeros(&stack_a,&stack_b);
 	calculate_moves(&stack_a, &stack_b);
-//	push_values(&stack_a, &stack_b);
+	push_values(&stack_a, &stack_b);
 
 	show_elements(stack_a);
 	show_elements(stack_b);
