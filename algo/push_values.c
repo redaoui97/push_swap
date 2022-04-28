@@ -89,9 +89,9 @@ static node *get_min_moves(node *stack_b)
 }*/
 static void check_moves(node *nodec, int *side, int *moves, node *stack)
 {
-	if ((float)(stack->position / list_size(stack->first)) < 0.5)
+	if ((float)(stack->position / list_size(stack->first)) > 0.5)
 	{
-		*moves = list_size(stack->first) - stack->position;
+		*moves = list_size(stack->first) - stack->position + 1;
 		*side = 1;
 	}
 	else
@@ -100,7 +100,6 @@ static void check_moves(node *nodec, int *side, int *moves, node *stack)
 		*side = 0;
 	}
 }
-
 void push_values(node **stack_a, node **stack_b)
 {
 	int side_a;
@@ -116,13 +115,14 @@ void push_values(node **stack_a, node **stack_b)
 	{
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
-		check_moves(*stack_b, &side_b, &moves_b, *stack_b);
+		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
 		ft_printf("*value_b:%d/side_b:%d/moves_b:%d|||value_a:%d/side_a:%d/moves_a:%d\n", (*stack_b)->value, side_b, moves_b, next->value, side_a, moves_a);
 		// here I havee to check if both are going the same way, otherwise
 		// make them rr/rrr the same distance and let the max finish the distance
-		//
 		printf("%d-\n", list_size((*stack_b)->first));
+
+		ft_printf("%d-\n", list_size((*stack_b)->first));
 		*stack_b = (*stack_b)->next;
 		i++;
 		// if (list_size((*stack_b)->first))
