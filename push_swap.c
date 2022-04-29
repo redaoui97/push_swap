@@ -14,15 +14,15 @@
 
 int main(int argc, char *argv[])
 {
-	node 	*stack_a;
-	node	*stack_b;
-	int		i;
+	node *stack_a;
+	node *stack_b;
+	int i;
 
 	stack_a = NULL;
 	stack_b = NULL;
 
 	if (argc < 2)
-		return (0);//IDK there was a condition like this when I used to play with arg
+		return (0); // IDK there was a condition like this when I used to play with arg
 	i = 1;
 	while (i < argc)
 	{
@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
 	}
 
 	ft_printf("----------------PUSH_SWAP--------------------\n");
-	calculate_lis(&stack_a);	
+	calculate_lis(&stack_a);
 	bool_lis_calculator(&stack_a);
 	show_elements(stack_a);
-	send_zeros(&stack_a,&stack_b);
+	send_zeros(&stack_a, &stack_b);
 	calculate_moves(&stack_a, &stack_b);
 	push_values(&stack_a, &stack_b);
 
