@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
 	push_values(&stack_a, &stack_b);
 
 	show_elements(stack_a);
-	// show_elements(stack_b);
+	show_elements(stack_b);
 
 	clear_elements(&stack_a);
-	// clear_elements(&stack_b);
+	clear_elements(&stack_b);
 	return 0;
 }

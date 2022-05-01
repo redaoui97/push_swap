@@ -191,9 +191,10 @@ void push_values(node **stack_a, node **stack_b)
 	int moves_b;
 	node *next;
 	node *next2;
-	int i = 0;
+	int i;
 	int size;
 
+	i = 0;
 	size = list_size(*stack_b);
 	while (*stack_b)
 	{
@@ -201,10 +202,6 @@ void push_values(node **stack_a, node **stack_b)
 			next2 = (*stack_b)->next;
 		else
 			next2 = (*stack_b)->first;
-		if (list_size(*stack_b) == 1)
-		{
-			get_element_top_a(&*stack_a, next->value, side);
-		}
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
 		calculate_moves(&*stack_a, &*stack_b);
@@ -217,6 +214,11 @@ void push_values(node **stack_a, node **stack_b)
 		}
 		else
 			classic_push(&*stack_a, &*stack_b, next, side_a);
+		if (list_size(*stack_b) == 1 &&) // something here; It segfaults when I use *stack_b=(*stack_b)->first so I have to usee something elsee to break the loop
+		{
+			pa(&*stack_a, &*stack_b);
+			break;
+		}
 		pa(&*stack_a, &*stack_b);
 		*stack_b = next2;
 	}
