@@ -47,14 +47,34 @@ static node *get_min_moves(node *stack_b)
 	return (min);
 }
 
-static void get_element_top(node **stack, int value, int side, int aorb)
+static void get_element_top_a(node **stack, int value, int side)
 {
-
 	// I neeed to get an element to the top
-	while ((*stack)->first > value != value)
+	while ((*stack)->first->value != value)
 	{
 		if (!side)
 		{
+			ra(&*stack);
+		}
+		else
+		{
+			rra(&*stack);
+		}
+	}
+}
+
+static void get_element_top_b(node **stack, int value, int side)
+{
+	// I neeed to get an element to the top
+	while ((*stack)->first->value != value)
+	{
+		if (!side)
+		{
+			rb(&*stack);
+		}
+		else
+		{
+			rrb(&*stack);
 		}
 	}
 }
@@ -142,45 +162,6 @@ static void rotate_moves(node **stack_a, node **stack_b, int side_a, int min, in
 		rotate_1(&*stack_b, 1, moves_b - min);
 	}
 }
-/*static void classic_sort(node **stack_a, node **stack_b)
-{
-	node *first_node_a;
-	node *first_node_b;
-	node *next;
-	int i;
-	int j;
-
-	i = 0;
-	first_node_a = *stack_a;
-	first_node_b = *stack_b;
-	while (*stack_b)
-	{
-	}
-	while (i < list_size(first_node_b))
-	{
-		j = 0;
-		while (j < get_min_index(*stack_b))
-		{
-			rb(&*stack_b);
-			j++;
-		}
-		j = 0;
-		next = get_next_number((*stack_b)->value, &*stack_a);
-		while (j < next->position)
-		{
-			ra(&*stack_a);
-			j++;
-		}
-		pa(&*stack_a, &*stack_b);
-		*stack_a = (*stack_a)->first;
-		*stack_b = (*stack_b)->first;
-		i++;
-	}
-	*stack_a = (*stack_a)->first;
-	*stack_b = (*stack_b)->first;
-	show_elements(*stack_a);
-	show_elements(*stack_b);
-}*/
 
 static void check_moves(node *nodec, int *side, int *moves, node *stack)
 {
@@ -196,50 +177,47 @@ static void check_moves(node *nodec, int *side, int *moves, node *stack)
 	}
 }
 
+static void classic_push(node **stack_a, node **stack_b, node *next, int side)
+{
+	get_element_top_a(&*stack_a, next->value, side);
+	get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side);
+}
+
 void push_values(node **stack_a, node **stack_b)
 {
 	int side_a;
 	int side_b;
 	int moves_a;
 	int moves_b;
-	node *first_node_b;
 	node *next;
+	node *next2;
 	int i = 0;
+	int size;
 
-	first_node_b = *stack_b;
-	while (*stack_b && i < list_size((*stack_b)->first))
+	size = list_size(*stack_b);
+	while (*stack_b)
 	{
+		if (*stack_b == (*stack_b)->first)
+			next2 = (*stack_b)->next;
+		else
+			next2 = (*stack_b)->first;
+		if (list_size(*stack_b) == 1)
+		{
+			get_element_top_a(&*stack_a, next->value, side);
+		}
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
-
+		calculate_moves(&*stack_a, &*stack_b);
 		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
-		ft_printf("*value_b:%d/side_b:%d/moves_b:%d|||value_a:%d/side_a:%d/moves_a:%d\n", (*stack_b)->value, side_b, moves_b, next->value, side_a, moves_a);
-
-		// here I havee to check if both are going the same way, otherwise
-		// make them rr/rrr the same distance and let the max finish the distance
 		if (side_a == side_b)
 		{
-			// rr and rrr and ra/rb the rest
 			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
 			rotate_moves(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b), moves_a, moves_b);
 		}
 		else
-		{
-			// brute force single push
-			classic_push(&*stack_b, &*stack_a, next);
-			// I still neeed to make this function
-			// Stopped on get element top line: 50
-			// I have to get *stack_b to the top, and get next to top and then use pa
-		}
-
-		//----------------next element
-		*stack_b = (*stack_b)->next;
-		i++;
-		// if (list_size((*stack_b)->first))
-		// 	*stack_b = (*stack_b)->first;
-		// else
-		// 	break;
+			classic_push(&*stack_a, &*stack_b, next, side_a);
+		pa(&*stack_a, &*stack_b);
+		*stack_b = next2;
 	}
-	*stack_b = first_node_b;
 }
