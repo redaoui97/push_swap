@@ -195,9 +195,9 @@ void push_values(node **stack_a, node **stack_b)
 	int size;
 
 	i = 0;
-	size = list_size(*stack_b);
 	while (*stack_b)
 	{
+		size = list_size(*stack_b);
 		if (*stack_b == (*stack_b)->first)
 			next2 = (*stack_b)->next;
 		else
@@ -214,12 +214,17 @@ void push_values(node **stack_a, node **stack_b)
 		}
 		else
 			classic_push(&*stack_a, &*stack_b, next, side_a);
-		if (list_size(*stack_b) == 1 &&) // something here; It segfaults when I use *stack_b=(*stack_b)->first so I have to usee something elsee to break the loop
+		if (size == 2) // something here; It segfaults when I use *stack_b=(*stack_b)->first so I have to usee something elsee to break the loop
 		{
+			ft_printf("hhhhh\n");
+			*stack_b = next2;
+			next = get_next_number((*stack_b)->value, &*stack_a);
+			get_element_top_a(&*stack_a, next->value, 0);
 			pa(&*stack_a, &*stack_b);
 			break;
 		}
 		pa(&*stack_a, &*stack_b);
 		*stack_b = next2;
 	}
+	ft_printf("hhfinished_\n");
 }
