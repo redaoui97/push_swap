@@ -226,5 +226,5 @@ void push_values(node **stack_a, node **stack_b)
 		pa(&*stack_a, &*stack_b);
 		*stack_b = next2;
 	}
-	ft_printf("hhfinished_\n");
+	//ft_printf("hhfinished_\n");
 }

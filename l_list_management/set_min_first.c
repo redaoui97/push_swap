@@ -57,7 +57,7 @@ void set_min_first(node **stack_a)
     first_node = *stack_a;
     min = get_min(*stack_a);
     position = get_min_index(*stack_a);
-    ft_printf("%d-%d\n",min,position);
+    //ft_printf("%d-%d\n",min,position);
     if ((position / list_size(*stack_a)) >= 0.5)
     {
         while (position)
