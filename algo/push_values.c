@@ -197,16 +197,17 @@ void push_values(node **stack_a, node **stack_b)
 	i = 0;
 	while (*stack_b)
 	{
-		size = list_size(*stack_b);
-		if (*stack_b == (*stack_b)->first)
-			next2 = (*stack_b)->next;
-		else
-			next2 = (*stack_b)->first;
+		//there is a problem in second calculations
+		//there is a problem in get_next_number: it doesn't return the right next value sometimes
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
+
+		ft_printf("%d-%d\n",(*stack_b)->value, next->value);
+
 		calculate_moves(&*stack_a, &*stack_b);
 		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
+
 		if (side_a == side_b)
 		{
 			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
@@ -214,6 +215,15 @@ void push_values(node **stack_a, node **stack_b)
 		}
 		else
 			classic_push(&*stack_a, &*stack_b, next, side_a);
+
+
+		//--------------
+		size = list_size(*stack_b);
+		if (*stack_b == (*stack_b)->first)
+			next2 = (*stack_b)->next;
+		else
+			next2 = (*stack_b)->first;
+		//--------------
 		if (size == 2) // something here; It segfaults when I use *stack_b=(*stack_b)->first so I have to usee something elsee to break the loop
 		{
 			ft_printf("hhhhh\n");

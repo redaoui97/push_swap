@@ -21,7 +21,16 @@ void first_calculation(node **stack_b)
     first_ptr = *stack_b;
     if (list_size(first_ptr) == 1)
         (*stack_b)->moves_count = 1;
-    while (count <= (list_size(first_ptr) / 2))
+    while (*stack_b)
+    {
+        if ((*stack_b)->position <= (list_size(first_ptr) / 2))
+            (*stack_b)->moves_count = (*stack_b)->position;
+        else
+            (*stack_b)->moves_count = list_size(first_ptr) - (*stack_b)->position;
+        *stack_b = (*stack_b)->next;
+    }
+    *stack_b = first_ptr;
+    /*while (count <= (list_size(first_ptr) / 2))
     {
         (*stack_b)->moves_count = count++;
         *stack_b = (*stack_b)->next;
@@ -35,6 +44,5 @@ void first_calculation(node **stack_b)
     {
         (*stack_b)->moves_count = count--;
         *stack_b = (*stack_b)->next;
-    }
-    *stack_b = first_ptr;
+    }*/
 }
