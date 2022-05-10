@@ -147,6 +147,16 @@ static void rotate_1(node **stack, int aorb, int rotates)
 
 static void rotate_moves(node **stack_a, node **stack_b, int side_a, int min, int moves_a, int moves_b)
 {
+	int	i;
+
+	i = 0;
+	while (i < min)
+	{
+		if(side_a)
+			rrr(&*stack_a, &*stack_b);
+		else
+			rr(&*stack_a, &*stack_b);
+	}
 	if (!side_a)
 	{
 		rotate_0(&*stack_a, 0, moves_a - min);
@@ -175,6 +185,7 @@ static void check_moves(node *nodec, int *side, int *moves, node *stack)
 
 static void classic_push(node **stack_a, node **stack_b, node *next, int side)
 {
+	//this should be deleted
 	get_element_top_a(&*stack_a, next->value, side);
 	get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side);
 }
@@ -197,12 +208,12 @@ void push_values(node **stack_a, node **stack_b)
 		show_elements(*stack_a);
 		show_elements(*stack_b);
 		ft_printf("----------\n");
+		calculate_moves(&*stack_a, &*stack_b);
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
 
 		ft_printf("pv|%d:%d\n",(*stack_b)->value, next->value);
 
-		calculate_moves(&*stack_a, &*stack_b);
 		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
 		
@@ -216,9 +227,10 @@ void push_values(node **stack_a, node **stack_b)
 		else
 		{
 			ft_printf("move2\n");
-			classic_push(&*stack_a, &*stack_b, next, side_a);
+			get_element_top_a(&*stack_a, next->value, side_a);
+			get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side_b);
 		}
-
+		
 		//--------------
 		/*size = list_size(*stack_b);
 		if (*stack_b == (*stack_b)->first)
