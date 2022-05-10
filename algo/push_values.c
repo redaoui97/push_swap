@@ -12,22 +12,18 @@
 
 #include "../header/push_swap.h"
 
-static node *get_next_number(int value, node **stack_a)
+static node	*get_next_number(int value, node **stack_a)
 {
-	node *next;
-	node *first_node;
-	node *next_value;
+	node	*next;
+	node	*first_node;
+	int		next_value;
 
 	next = *stack_a;
 	first_node = *stack_a;
 	while (*stack_a)
 	{
-		if ((*stack_a)->next == NULL)
-			next_value = first_node;
-		else
-			next_value = (*stack_a)->next;
-		if ((*stack_a)->value < value && next_value->value > value)
-			next = next_value;
+		if ((*stack_a)->value > value && (*stack_a)->value < next->value)
+			next = *stack_a;
 		*stack_a = (*stack_a)->next;
 	}
 	*stack_a = first_node;
@@ -197,28 +193,34 @@ void push_values(node **stack_a, node **stack_b)
 	i = 0;
 	while (*stack_b)
 	{
-		//there is a problem in second calculations
 		//there is a problem in get_next_number: it doesn't return the right next value sometimes
+		show_elements(*stack_a);
+		show_elements(*stack_b);
+		ft_printf("----------\n");
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
 
-		ft_printf("%d-%d\n",(*stack_b)->value, next->value);
+		ft_printf("pv|%d:%d\n",(*stack_b)->value, next->value);
 
 		calculate_moves(&*stack_a, &*stack_b);
 		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
-
+		
+		//something is going on with the second condition move2, it's the one that probably causes the segfault
 		if (side_a == side_b)
 		{
+			ft_printf("move1\n");
 			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
 			rotate_moves(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b), moves_a, moves_b);
 		}
 		else
+		{
+			ft_printf("move2\n");
 			classic_push(&*stack_a, &*stack_b, next, side_a);
-
+		}
 
 		//--------------
-		size = list_size(*stack_b);
+		/*size = list_size(*stack_b);
 		if (*stack_b == (*stack_b)->first)
 			next2 = (*stack_b)->next;
 		else
@@ -232,9 +234,9 @@ void push_values(node **stack_a, node **stack_b)
 			get_element_top_a(&*stack_a, next->value, 0);
 			pa(&*stack_a, &*stack_b);
 			break;
-		}
+		}*/
 		pa(&*stack_a, &*stack_b);
-		*stack_b = next2;
+		*stack_b = (*stack_b)->first;
 	}
 	//ft_printf("hhfinished_\n");
 }

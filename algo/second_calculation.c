@@ -22,11 +22,7 @@ static node	*get_next_number(int value, node **stack_a)
 	first_node = *stack_a;
 	while (*stack_a)
 	{
-		if((*stack_a)->next == NULL)
-			next_value = first_node->value;
-		else
-			next_value = (*stack_a)->next->value;
-		if ((*stack_a)->value < value && next_value > value)
+		if ((*stack_a)->value > value && (*stack_a)->value < next->value)
 			next = *stack_a;
 		*stack_a = (*stack_a)->next;
 	}
@@ -57,9 +53,9 @@ void second_calculation(node **stack_a, node **stack_b)
     {
 		next = get_next_number((*stack_b)->value, &*stack_a);
         if (next->position <= (list_size(first_node_a) / 2))
-            (*stack_b)->moves_count = next->position;
+            (*stack_b)->moves_count += next->position;
         else
-            (*stack_b)->moves_count = list_size(first_node_a) - next->position;
+            (*stack_b)->moves_count += list_size(first_node_a) - next->position;
         *stack_b = (*stack_b)->next;
     }
 	*stack_a = first_node_a;

@@ -36,12 +36,6 @@ int main(int argc, char *argv[])
 	send_zeros(&stack_a, &stack_b);
 	calculate_moves(&stack_a, &stack_b);
 
-	ft_printf("---------\n");
-	show_elements(stack_a);
-	show_elements(stack_b);
-
-
-	
 	push_values(&stack_a, &stack_b);
 	set_min_first(&stack_a);
 	
