@@ -226,18 +226,17 @@ void push_values(node **stack_a, node **stack_b)
 	while (*stack_b)
 	{
 		calculate_moves(&*stack_a, &*stack_b);
-		show_elements(*stack_a);
-		show_elements(*stack_b);
-		ft_printf("----------\n");
 		*stack_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
 
-		ft_printf("pv|%d:%d\n",(*stack_b)->value, next->value);
+		show_elements(*stack_a);
+		show_elements(*stack_b);
+		//ft_printf("pv|%d:%d\n",(*stack_b)->value, next->value);
 
 		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
 
-		ft_printf("moves:%d:%d-side:%d:%d\n",moves_a, moves_b, side_a, side_b);
+		//ft_printf("moves:%d:%d-side:%d:%d\n",moves_a, moves_b, side_a, side_b);
 		get_element_top_a(&*stack_a, next->value, side_a);
 		get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side_b);
 
@@ -256,7 +255,7 @@ void push_values(node **stack_a, node **stack_b)
 		}
 		
 		//--------------
-		/*size = list_size(*stack_b);
+		size = list_size(*stack_b);
 		if (*stack_b == (*stack_b)->first)
 			next2 = (*stack_b)->next;
 		else
@@ -271,8 +270,15 @@ void push_values(node **stack_a, node **stack_b)
 			pa(&*stack_a, &*stack_b);
 			break;
 		}*/
+		if(list_size(*stack_b) > 1)
+			next2 = (*stack_b)->first->next;
+		else
+			break ;
 		pa(&*stack_a, &*stack_b);
-		*stack_b = (*stack_b)->first;
+		*stack_b = next2;
 	}
-	//ft_printf("hhfinished_\n");
+	next = get_next_number((*stack_b)->value, &*stack_a);
+	get_element_top_a(&*stack_a, next->value, side_a);
+	pa(&*stack_a, &*stack_b);
+	set_min_first(&*stack_a);
 }
