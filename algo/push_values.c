@@ -47,6 +47,7 @@ static node	*get_next_number(int value, node **stack_a)
 	*stack_a = first_node;
 	return (next);
 }
+
 static node *get_min_moves(node *stack_b)
 {
 	node *min;
@@ -168,12 +169,14 @@ static void rotate_moves(node **stack_a, node **stack_b, int side_a, int min, in
 	int	i;
 
 	i = 0;
-	while (i < min)
+	while (i <= min)
 	{
+		//here------------------------------
 		if(side_a)
 			rrr(&*stack_a, &*stack_b);
 		else
 			rr(&*stack_a, &*stack_b);
+		i++;
 	}
 	if (!side_a)
 	{
@@ -222,22 +225,24 @@ void push_values(node **stack_a, node **stack_b)
 	i = 0;
 	while (*stack_b)
 	{
-		//there is a problem in get_next_number: it doesn't return the right next value sometimes
 		calculate_moves(&*stack_a, &*stack_b);
 		show_elements(*stack_a);
 		show_elements(*stack_b);
 		ft_printf("----------\n");
 		*stack_b = get_min_moves(*stack_b);
-		//get_next_number always returns the first node in stack_a
 		next = get_next_number((*stack_b)->value, &*stack_a);
 
 		ft_printf("pv|%d:%d\n",(*stack_b)->value, next->value);
 
 		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
-		
-		//something is going on with the second condition move2, it's the one that probably causes the segfault
-		if (side_a == side_b)
+
+		ft_printf("moves:%d:%d-side:%d:%d\n",moves_a, moves_b, side_a, side_b);
+		get_element_top_a(&*stack_a, next->value, side_a);
+		get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side_b);
+
+		//a lot is wrong with the first condition, I have to check the functions one by one and see why it messes up the work
+		/*if (side_a == side_b)
 		{
 			ft_printf("move1\n");
 			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
