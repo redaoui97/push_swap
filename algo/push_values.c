@@ -228,21 +228,19 @@ void push_values(node **stack_a, node **stack_b)
 	while (*stack_b)
 	{
 		calculate_moves(&*stack_a, &*stack_b);
-		//show_elements(*stack_a);
-		//show_elements(*stack_b);
+		show_elements(*stack_a);
+		show_elements(*stack_b);
 		ptr_b = get_min_moves(*stack_b);
 		next = get_next_number(ptr_b->value, &*stack_a);
-
-		//I think I kinda fixed the get_element_top_b but I still need to check, then going to fix checkmoves then the two conditions to optimize the shit
-		//ft_printf("%d:%d-stack value:%d\n",ptr_b->value, next->value, (*stack_a)->value);
 		check_moves(ptr_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
 
-		get_element_top_a(&*stack_a, next->value, side_a);
-		get_element_top_b(&(*stack_b), ptr_b->value, side_b);
-
-		//a lot is wrong with the first condition, I have to check the functions one by one and see why it messes up the work
-		/*if (side_a == side_b)
+		
+		
+		//everything is good now, I just need to optimize more and set the parsing 
+		
+		//second condition is working good, first one not really
+		if (side_a <= 0)//normally it's side_a = side_b
 		{
 			ft_printf("move1\n");
 			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
@@ -252,8 +250,8 @@ void push_values(node **stack_a, node **stack_b)
 		{
 			ft_printf("move2\n");
 			get_element_top_a(&*stack_a, next->value, side_a);
-			get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side_b);
-		}*/
+			get_element_top_b(&(*stack_b), ptr_b->value, side_b);
+		}
 		if(list_size(*stack_b) > 1)
 			next2 = (*stack_b)->first->next;
 		else
