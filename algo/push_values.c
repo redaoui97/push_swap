@@ -45,6 +45,7 @@ static node	*get_next_number(int value, node **stack_a)
 		*stack_a = (*stack_a)->next;
 	}
 	*stack_a = first_node;
+		//ft_printf("gnn:value:%d:%d:%d\n",value, (*stack_a)->value, next->value);
 	return (next);
 }
 
@@ -211,7 +212,7 @@ static void classic_push(node **stack_a, node **stack_b, node *next, int side)
 	get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side);
 }
 
-void push_values(node **stack_a, node **stack_b)
+void push_values(node **stack_a, node **stack_b) 
 {
 	int	side_a;
 	int side_b;
@@ -227,11 +228,13 @@ void push_values(node **stack_a, node **stack_b)
 	while (*stack_b)
 	{
 		calculate_moves(&*stack_a, &*stack_b);
+		//show_elements(*stack_a);
+		//show_elements(*stack_b);
 		ptr_b = get_min_moves(*stack_b);
-		next = get_next_number((*stack_b)->value, &*stack_a);
+		next = get_next_number(ptr_b->value, &*stack_a);
 
 		//I think I kinda fixed the get_element_top_b but I still need to check, then going to fix checkmoves then the two conditions to optimize the shit
-		
+		//ft_printf("%d:%d-stack value:%d\n",ptr_b->value, next->value, (*stack_a)->value);
 		check_moves(ptr_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
 
@@ -250,23 +253,6 @@ void push_values(node **stack_a, node **stack_b)
 			ft_printf("move2\n");
 			get_element_top_a(&*stack_a, next->value, side_a);
 			get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side_b);
-		}
-		
-		//--------------
-		size = list_size(*stack_b);
-		if (*stack_b == (*stack_b)->first)
-			next2 = (*stack_b)->next;
-		else
-			next2 = (*stack_b)->first;
-		//--------------
-		if (size == 2) // something here; It segfaults when I use *stack_b=(*stack_b)->first so I have to usee something elsee to break the loop
-		{
-			ft_printf("hhhhh\n");
-			*stack_b = next2;
-			next = get_next_number((*stack_b)->value, &*stack_a);
-			get_element_top_a(&*stack_a, next->value, 0);
-			pa(&*stack_a, &*stack_b);
-			break;
 		}*/
 		if(list_size(*stack_b) > 1)
 			next2 = (*stack_b)->first->next;

@@ -23,18 +23,16 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (0); // IDK there was a condition like this when I used to play with arg
-	i = 1;
-	while (i < argc)
+	i = argc - 1;
+	while (i) 
 	{
-		add_element(&stack_a, ft_atoi(argv[i++]));
+		add_element(&stack_a, ft_atoi(argv[i--]));
 	}
 
-	ft_printf("----------------PUSH_SWAP--------------------\n");
-	calculate_lis(&stack_a);
-	bool_lis_calculator(&stack_a);
+	//ft_printf("----------------PUSH_SWAP--------------------\n");
 	//show_elements(stack_a);
+	bool_lis_calculator(&stack_a);
 	send_zeros(&stack_a, &stack_b);
-
 	push_values(&stack_a, &stack_b);
 	
 	//show_elements(stack_a);
