@@ -213,12 +213,13 @@ static void classic_push(node **stack_a, node **stack_b, node *next, int side)
 
 void push_values(node **stack_a, node **stack_b)
 {
-	int side_a;
+	int	side_a;
 	int side_b;
 	int moves_a;
 	int moves_b;
-	node *next;
+	node	*next;
 	node *next2;
+	node *ptr_b;
 	int i;
 	int size;
 
@@ -226,19 +227,16 @@ void push_values(node **stack_a, node **stack_b)
 	while (*stack_b)
 	{
 		calculate_moves(&*stack_a, &*stack_b);
-		*stack_b = get_min_moves(*stack_b);
+		ptr_b = get_min_moves(*stack_b);
 		next = get_next_number((*stack_b)->value, &*stack_a);
 
-		show_elements(*stack_a);
-		show_elements(*stack_b);
-		//ft_printf("pv|%d:%d\n",(*stack_b)->value, next->value);
-
-		check_moves(*stack_b, &side_b, &moves_b, (*stack_b)->first);
+		//I think I kinda fixed the get_element_top_b but I still need to check, then going to fix checkmoves then the two conditions to optimize the shit
+		
+		check_moves(ptr_b, &side_b, &moves_b, (*stack_b)->first);
 		check_moves(next, &side_a, &moves_a, *stack_a);
 
-		//ft_printf("moves:%d:%d-side:%d:%d\n",moves_a, moves_b, side_a, side_b);
 		get_element_top_a(&*stack_a, next->value, side_a);
-		get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side_b);
+		get_element_top_b(&(*stack_b), ptr_b->value, side_b);
 
 		//a lot is wrong with the first condition, I have to check the functions one by one and see why it messes up the work
 		/*if (side_a == side_b)
@@ -281,4 +279,5 @@ void push_values(node **stack_a, node **stack_b)
 	get_element_top_a(&*stack_a, next->value, side_a);
 	pa(&*stack_a, &*stack_b);
 	set_min_first(&*stack_a);
+	*stack_a = (*stack_a)->first;
 }
