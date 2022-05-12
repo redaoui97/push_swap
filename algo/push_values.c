@@ -102,12 +102,12 @@ static int min_comp(int a, int b)
 	return (a);
 }
 
-static void rotate(node **stack_a, node **stack_b, int side, int rotations)
+static void rotate(node **stack_a, node **stack_b, node *next, node *ptr_b, int side, int rotations)
 {
 	int i;
 
 	i = 0;
-	if (side)
+	/*if (side)
 	{
 		while (i++ < rotations)
 			rrr(&*stack_a, &*stack_b);
@@ -116,6 +116,18 @@ static void rotate(node **stack_a, node **stack_b, int side, int rotations)
 	{
 		while (i++ < rotations)
 			rr(&*stack_a, &*stack_b);
+	}*/
+
+	while ((*stack_a)->first->value != next->value && (*stack_b)->first->value != ptr_b->value)
+	{
+		if (!side)
+		{
+			rr(&*stack_a, &*stack_b);
+		}
+		else
+		{
+			rrr(&*stack_a, &*stack_b);
+		}
 	}
 }
 
@@ -238,11 +250,15 @@ void push_values(node **stack_a, node **stack_b)
 		
 		
 		//everything is good now, I just need to optimize more and set the parsing 
-		
+		ft_printf("stack_a:%d|stack_b:%d\n",next->value, ptr_b->value);
+		ft_printf("side_a:%d|move_a:%d||side_b:%d|move_b:%d\n",side_a,moves_a,side_b,moves_b);
+
+		rotate(&*stack_a, &*stack_b, next, ptr_b, side_a, min_comp(moves_a, moves_b));
+		rotate_moves(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b), moves_a, moves_b);
 		//second condition is working good, first one not really
-		if (side_a <= 0)//normally it's side_a = side_b
+		/*if (side_a <= 0)//normally it's side_a = side_b
 		{
-			ft_printf("move1\n");
+			ft_printf("side_a:%d|move_a:%d||side_b:%d|move_b:%d\n",side_a,moves_a,side_b,moves_b);
 			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
 			rotate_moves(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b), moves_a, moves_b);
 		}
@@ -251,7 +267,7 @@ void push_values(node **stack_a, node **stack_b)
 			ft_printf("move2\n");
 			get_element_top_a(&*stack_a, next->value, side_a);
 			get_element_top_b(&(*stack_b), ptr_b->value, side_b);
-		}
+		}*/
 		if(list_size(*stack_b) > 1)
 			next2 = (*stack_b)->first->next;
 		else
