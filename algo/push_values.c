@@ -65,17 +65,12 @@ static node *get_min_moves(node *stack_b)
 
 static void get_element_top_a(node **stack, int value, int side)
 {
-	// I neeed to get an element to the top
 	while ((*stack)->first->value != value)
 	{
 		if (!side)
-		{
 			ra(&*stack);
-		}
 		else
-		{
 			rra(&*stack);
-		}
 	}
 }
 
@@ -85,13 +80,9 @@ static void get_element_top_b(node **stack, int value, int side)
 	while ((*stack)->first->value != value)
 	{
 		if (!side)
-		{
 			rb(&*stack);
-		}
 		else
-		{
 			rrb(&*stack);
-		}
 	}
 }
 
@@ -102,64 +93,43 @@ static int min_comp(int a, int b)
 	return (a);
 }
 
-static void rotate(node **stack_a, node **stack_b, node *next, node *ptr_b, int side, int *moves_a, int *moves_b)
+static void rotate(node **stack_a, node **stack_b, int next, int ptr_b, int side)
 {
-	while (next->first->value != next->value && ptr_b->first->value != ptr_b->value)
+	while (((*stack_a)->first->value != next) && ((*stack_b)->first->value != ptr_b))
 	{
 		if (!side)
-		{
 			rr(&*stack_a, &*stack_b);
-		}
 		else
-		{
 			rrr(&*stack_a, &*stack_b);
-		}
 	}
-	while (next->first->value != next->value)
+	while ((*stack_a)->first->value != next)
 	{
-		if(!side)
+		if (!side)
 			ra(&*stack_a);
 		else
 			rra(&*stack_a);
-		(*moves_a)--;
 	}
-	while (ptr_b->first->value != ptr_b->value)
+	while ((*stack_b)->first->value != ptr_b)
 	{
-		if(!side)
+		if (!side)
 			rb(&*stack_b);
 		else
 			rrb(&*stack_b);
-		(*moves_b)--;
 	}
 }
 
-static void check_moves(node *nodec, int *side, int *moves, node *stack)
+static void check_moves(node *nodec, int *side, node *stack)
 {
 	if (((float)(nodec->position) / list_size(stack->first)) > 0.5)
-	{
-		*moves = list_size(stack->first) - nodec->position;
 		*side = 1;
-	}
 	else
-	{
-		*moves = nodec->position;
 		*side = 0;
-	}
-}
-
-static void classic_push(node **stack_a, node **stack_b, node *next, int side)
-{
-	//this should be deleted
-	get_element_top_a(&*stack_a, next->value, side);
-	get_element_top_b(&((*stack_b)->first), (*stack_b)->value, side);
 }
 
 void push_values(node **stack_a, node **stack_b) 
 {
 	int		side_a;
 	int 	side_b;
-	int 	moves_a;
-	int 	moves_b;
 	node	*next;
 	node 	*next2;
 	node 	*ptr_b;
@@ -167,29 +137,14 @@ void push_values(node **stack_a, node **stack_b)
 	while (*stack_b)
 	{
 		calculate_moves(&*stack_a, &*stack_b);
-		show_elements(*stack_a);
-		show_elements(*stack_b);
 		ptr_b = get_min_moves(*stack_b);
 		next = get_next_number(ptr_b->value, &*stack_a);
-		check_moves(ptr_b, &side_b, &moves_b, (*stack_b)->first);
-		check_moves(next, &side_a, &moves_a, *stack_a);
-
-		
-		
-		//everything is good now, I just need to optimize more and set the parsing 
-		ft_printf("stack_a:%d|stack_b:%d\n",next->value, ptr_b->value);
-		ft_printf("side_a:%d|move_a:%d||side_b:%d|move_b:%d\n",side_a,moves_a,side_b,moves_b);
-
-		//rotate(&*stack_a, &*stack_b, next, ptr_b, side_a, &moves_a, &moves_b);
-		//second condition is working good, first one not really
-		if (side_a == side_b)//normally it's side_a = side_b
-		{
-			ft_printf("move1\n");
-			rotate(&*stack_a, &*stack_b, next, ptr_b, side_a, &moves_a, &moves_b);
-		}
+		check_moves(ptr_b, &side_b, (*stack_b)->first);
+		check_moves(next, &side_a, *stack_a);
+		if (side_a == side_b)
+			rotate(&*stack_a, &*stack_b, next->value, ptr_b->value, side_a);
 		else
 		{
-			ft_printf("move2\n");
 			get_element_top_a(&*stack_a, next->value, side_a);
 			get_element_top_b(&(*stack_b), ptr_b->value, side_b);
 		}
