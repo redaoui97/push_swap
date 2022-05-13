@@ -102,23 +102,9 @@ static int min_comp(int a, int b)
 	return (a);
 }
 
-static void rotate(node **stack_a, node **stack_b, node *next, node *ptr_b, int side, int **moves_a, int **moves_b)
+static void rotate(node **stack_a, node **stack_b, node *next, node *ptr_b, int side, int *moves_a, int *moves_b)
 {
-	int i;
-
-	i = 0;
-	/*if (side)
-	{
-		while (i++ < rotations)
-			rrr(&*stack_a, &*stack_b);
-	}
-	else
-	{
-		while (i++ < rotations)
-			rr(&*stack_a, &*stack_b);
-	}*/
-	//something here, I'm trying to decrement until it's 0
-	while ((*moves_a)-- && (*moves_b)--)
+	while (next->first->value != next->value && ptr_b->first->value != ptr_b->value)
 	{
 		if (!side)
 		{
@@ -129,7 +115,7 @@ static void rotate(node **stack_a, node **stack_b, node *next, node *ptr_b, int 
 			rrr(&*stack_a, &*stack_b);
 		}
 	}
-	while (*moves_a)
+	while (next->first->value != next->value)
 	{
 		if(!side)
 			ra(&*stack_a);
@@ -137,85 +123,13 @@ static void rotate(node **stack_a, node **stack_b, node *next, node *ptr_b, int 
 			rra(&*stack_a);
 		(*moves_a)--;
 	}
-	while (*moves_b)
+	while (ptr_b->first->value != ptr_b->value)
 	{
 		if(!side)
 			rb(&*stack_b);
 		else
 			rrb(&*stack_b);
 		(*moves_b)--;
-	}
-}
-
-static void rotate_0(node **stack, int aorb, int rotates)
-{
-	int i;
-
-	i = 0;
-	if (!aorb)
-	{
-		while (i < rotates)
-		{
-			ra(&*stack);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < rotates)
-		{
-			rb(&*stack);
-			i++;
-		}
-	}
-}
-
-static void rotate_1(node **stack, int aorb, int rotates)
-{
-	int i;
-
-	i = 0;
-	if (!aorb)
-	{
-		while (i < rotates)
-		{
-			rra(&*stack);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < rotates)
-		{
-			rrb(&*stack);
-			i++;
-		}
-	}
-}
-
-static void rotate_moves(node **stack_a, node **stack_b, int side_a, int min, int moves_a, int moves_b)
-{
-	int	i;
-
-	i = 0;
-	while (i <= min)
-	{
-		//here------------------------------
-		if(side_a)
-			rrr(&*stack_a, &*stack_b);
-		else
-			rr(&*stack_a, &*stack_b);
-		i++;
-	}
-	if (!side_a)
-	{
-		rotate_0(&*stack_a, 0, moves_a - min);
-		rotate_0(&*stack_b, 1, moves_b - min);
-	}
-	else
-	{
-		rotate_1(&*stack_a, 0, moves_a - min);
-		rotate_1(&*stack_b, 1, moves_b - min);
 	}
 }
 
@@ -266,21 +180,19 @@ void push_values(node **stack_a, node **stack_b)
 		ft_printf("stack_a:%d|stack_b:%d\n",next->value, ptr_b->value);
 		ft_printf("side_a:%d|move_a:%d||side_b:%d|move_b:%d\n",side_a,moves_a,side_b,moves_b);
 
-		rotate(&*stack_a, &*stack_b, next, ptr_b, side_a, &moves_a, &moves_b);
-		rotate_moves(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b), moves_a, moves_b);
+		//rotate(&*stack_a, &*stack_b, next, ptr_b, side_a, &moves_a, &moves_b);
 		//second condition is working good, first one not really
-		/*if (side_a <= 0)//normally it's side_a = side_b
+		if (side_a == side_b)//normally it's side_a = side_b
 		{
-			ft_printf("side_a:%d|move_a:%d||side_b:%d|move_b:%d\n",side_a,moves_a,side_b,moves_b);
-			rotate(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b));
-			rotate_moves(&*stack_a, &*stack_b, side_a, min_comp(moves_a, moves_b), moves_a, moves_b);
+			ft_printf("move1\n");
+			rotate(&*stack_a, &*stack_b, next, ptr_b, side_a, &moves_a, &moves_b);
 		}
 		else
 		{
 			ft_printf("move2\n");
 			get_element_top_a(&*stack_a, next->value, side_a);
 			get_element_top_b(&(*stack_b), ptr_b->value, side_b);
-		}*/
+		}
 		if(list_size(*stack_b) > 1)
 			next2 = (*stack_b)->first->next;
 		else

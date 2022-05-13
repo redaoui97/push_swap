@@ -33,7 +33,7 @@ $(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
 
 %.o: %.c header/push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@
-
+	
 clean:
 	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
 
