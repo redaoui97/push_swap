@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rnabil <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/13 17:51:55 by rnabil            #+#    #+#              #
+#    Updated: 2022/05/13 17:51:59 by rnabil           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = gcc
 Flag = -Wall -Wextra -Werror
 FUNCTIONS_list_management = l_list_management/add_element l_list_management/clear_elements \
