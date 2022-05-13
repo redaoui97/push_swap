@@ -13,13 +13,10 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//includes, remember to remove stdio later
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
 
-//linked list
 typedef struct nodes
 {
 	int				position;
@@ -33,7 +30,6 @@ typedef struct nodes
 	struct nodes	*last;
 } node;
 
-//Functions ft_printf
 int		ft_printf(const char *f, ...);
 int		print_addresse(unsigned long int adr);
 int		print_nbr(int n);
@@ -44,7 +40,6 @@ int		print_str(char *str);
 int		print_char(char chr);
 size_t	ft_strlen(const char *str);
 
-//functions nodes implementation
 node	*new_node(int value);
 void	add_element(node **stack_a, int value);
 void	show_elements(node *stack_a);
@@ -54,7 +49,6 @@ node	*duplicate_node(node *old); //it's useless so far
 void	remove_element(node **stack_a);
 void	set_min_first(node **stack_a);
 
-//move operations
 void	sa(node **stack_a);
 void	sb(node **stack_b); //basically the same as sa.c
 void	ss(node **stack_a, node **stack_b);
@@ -67,7 +61,6 @@ void	rra(node **stack_a);
 void	rrb(node **stack_b);
 void	rrr(node **stack_a, node **stack_b);
 
-//algo functins
 void	calculate_lis(node **stack_a);
 void	bool_lis_calculator(node **stack_a);
 void	send_zeros(node **stack_a, node **stack_b);
@@ -76,7 +69,6 @@ void	first_calculation(node **stack_b);
 void	second_calculation(node **stack_a, node **stack_b);
 void	push_values(node **stack_a, node **stack_b);
 
-//src functions
 int		ft_atoi(char *str);
 
 #endif

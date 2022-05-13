@@ -56,17 +56,6 @@ void second_calculation(node **stack_a, node **stack_b)
 
 	first_node_b = *stack_b;
 	first_node_a = *stack_a;
-	/*while (*stack_b)
-	{
-		next = get_next_number((*stack_b)->value, &*stack_a);
-		if ((float)(next->position + 1)/list_size(first_node_a) <= 0.5)
-			(*stack_b)->moves_count += next->position + 2;
-		else
-			(*stack_b)->moves_count += list_size(*stack_a) - (next->position);
-		*stack_b = (*stack_b)->next;
-	}*/
-
-	//something is wrong here
 	while (*stack_b)
     {
 		next = get_next_number((*stack_b)->value, &*stack_a);

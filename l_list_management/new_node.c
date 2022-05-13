@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-// allocates a new node and returns a pointer to it
-
 node	*new_node(int value)
 {
 	node	*n;

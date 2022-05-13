@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//removes a node from the list
-
 void	remove_element(node **stack_a)
 {
 	node	*ptr;

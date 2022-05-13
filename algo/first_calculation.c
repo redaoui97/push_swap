@@ -30,19 +30,4 @@ void first_calculation(node **stack_b)
         *stack_b = (*stack_b)->next;
     }
     *stack_b = first_ptr;
-    /*while (count <= (list_size(first_ptr) / 2))
-    {
-        (*stack_b)->moves_count = count++;
-        *stack_b = (*stack_b)->next;
-    }
-    if ((list_size(first_ptr) % 2) == 1 && list_size(first_ptr) > 2)
-    {
-        (*stack_b)->moves_count = count;
-        *stack_b = (*stack_b)->next;
-    }
-    while (count > 0 && *stack_b)
-    {
-        (*stack_b)->moves_count = count--;
-        *stack_b = (*stack_b)->next;
-    }*/
 }

@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//frees all the elements of the stack
-//I can give all elements null to remove garbage value 
 void	clear_elements(node **stack_a)
 {
 	node *perm;

@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//sa (swap a): Swap the first 2 elements at the top of the stack a
-
 void	sa(node **stack_a)
 {
 	int	permu;

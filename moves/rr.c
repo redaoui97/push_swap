@@ -12,7 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//rr: ra and rb at the same time
 
 static void	ra_cpy(node **stack_a)
 {

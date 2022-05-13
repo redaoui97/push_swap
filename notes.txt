@@ -1,4 +1,0 @@
-I have to optimize send zeros
-fix the segfault in push values (read the comments)
-add parsing
-add brute force algorithms

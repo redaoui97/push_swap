@@ -23,15 +23,10 @@ void	send_zeros(node **stack_a, node **stack_b)
 	ptr_start = *stack_a;
 	while (i < size)
 	{
-		//Must optimize here
 		if ((*stack_a)->bool_lis == 1)
-		{
 			ra(&*stack_a);
-		}
 		else
-		{
 			pb(&*stack_a, &*stack_b);
-		}
 		i++;
 	}	
 }

@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//rrb (reverse rotate b): Shifts down all elements of stack b by 1. The last element becomes the first one
-
 void	rrb(node **stack_b)
 {
 	int		permut;

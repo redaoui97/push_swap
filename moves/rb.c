@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//rb (rotate b) : does the same thing as ra : shifts up all elements of stack b by 1. the first element becomes the last one
-
 void	rb(node **stack_b)
 {
 	int		permut;

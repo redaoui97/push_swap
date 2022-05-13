@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//rrr : rra and rrb at the same time
-
 static void	rra_cpy(node **stack_a)
 {
 	int		permut;

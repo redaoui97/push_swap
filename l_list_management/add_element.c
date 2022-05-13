@@ -12,8 +12,6 @@
 
 #include "../header/push_swap.h"
 
-//creates a node and adds it to the top of the list
-
 void	add_element(node **stack_a, int value)
 {
 	node	*new;
