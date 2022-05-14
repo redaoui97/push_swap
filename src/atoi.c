@@ -21,9 +21,9 @@ static int	ft_isdigit(int c)
 		return (0);
 }
 
-int	ft_atoi(char *str)
+long int	ft_atoi(char *str)
 {
-	int	res;
+	long int	res;
 	int	i;
 	int	neg;
 

@@ -24,16 +24,16 @@ FUNCTIONS_printf = ft_printf/ft_printf ft_printf/ft_strlen \
 		   ft_printf/print_hex_lower ft_printf/print_hex_upper \
 		   ft_printf/print_nbr ft_printf/print_nbr_unsigned \
 		   ft_printf/print_str
-FUNCTIONS_algo = push_swap algo/calculate_lis algo/bool_lis_calculator algo/send_zeros algo/calculate_moves \
-		   algo/first_calculation algo/second_calculation algo/push_values
-FUNCTIONS_src = src/atoi
+FUNCTIONS_algo = push_swap algo/lis_algo/calculate_lis algo/lis_algo/bool_lis_calculator algo/lis_algo/send_zeros algo/lis_algo/calculate_moves \
+		   algo/lis_algo/first_calculation algo/lis_algo/second_calculation algo/lis_algo/push_values
+FUNCTIONS_src = src/atoi src/parsin src/is_sorted
 
 OBJS_list = $(FUNCTIONS_list_management:=.o)
 OBJS_moves = $(FUNCTIONS_moves:=.o)
 OBJS_algo = $(FUNCTIONS_algo:=.o)
 OBJS_printf = $(FUNCTIONS_printf:=.o)
 OBJS_src = $(FUNCTIONS_src:=.o)
-NAME = push_swap.a
+NAME = push_swap
 AR = ar rc
 
 .PHONY: all clean fclean re bonus
@@ -41,7 +41,7 @@ AR = ar rc
 all : $(NAME)
 
 $(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
-	$(AR) $(NAME) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
+	$(CC) $(FLAGS) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) -o $(NAME)
 
 %.o: %.c header/push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@

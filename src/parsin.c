@@ -12,17 +12,54 @@
 
 #include "../header/push_swap.h"
 
-static void error()
+static void error(node **stack)
 {
     ft_printf("Error\n");
+    if (*stack)
+        clear_elements(&*stack);
     exit(0);
+}
+
+int is_num(char arg)
+{
+    if (arg <= '0' || arg >= '9')
+        return (0);
+    return (1);
+}
+
+static int	ft_strcmp(char *s1, char *s2)
+{
+	int i;
+    int size;
+
+    size = ft_strlen(s1);
+    if (ft_strlen(s2) != size)
+        return (0);
+	i = 0;
+	while (i < size)
+	{
+        if (s1[i] != s2[i])
+            return (0);
+        i++;
+    }
+	return (1);
+}
+
+static int  non_int(char *arg)
+{
+
+    if ((ft_atoi(arg)) > 2147483647 || (ft_atoi(arg)) < -2147483648)
+        return (1);
+    return (0);
 }
 
 static int  has_non_num(char *arg)
 {
     int i;
 
-    i = 0;
+    i = 1;
+    if (arg[0] != '-' && arg[0] != '+' && !is_num(arg[0]))
+        return (1);
     while (arg[i])
     {
         if (arg[i] <= '0' || arg[i] >= '9')
@@ -32,26 +69,26 @@ static int  has_non_num(char *arg)
     return (0);
 }
 
-static int  non_int(char *arg)
-{
-    if (ft_atoi(arg) > 2147483647 || ft_atoi(arg) < -2147483648)
-        return (1);
-    return (0);
-}
-
-void	parsin(char *arg, char *argv[])
+void	parsin(char *arg, node **stack_a)
 {
     int i;
 
     i = 0;
     if (has_non_num(arg))
-        error();
+        error(&((*stack_a)->first));
     if (non_int(arg))
-        error();
-    while (arg[i])
+        error(&((*stack_a)->first));
+    if (*stack_a)
     {
-        if (ft_atoi(arg[i]) == ft_atoi(arg))
-            error();
-        i++;
+        if (list_size(*stack_a) > 1)
+        {
+            while (*stack_a)
+            {
+                if (ft_atoi(arg) == (*stack_a)->value)
+                    error(&((*stack_a)->first));
+                *stack_a = (*stack_a)->next;
+            }
+            *stack_a = (*stack_a)->first;
+        }
     }
 }
