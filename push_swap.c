@@ -12,6 +12,37 @@
 
 #include "header/push_swap.h"
 
+static void error(node **stack)
+{
+    ft_printf("Error\n");
+    if (*stack != NULL)
+        clear_elements(&*stack);
+    exit(EXIT_FAILURE);
+}
+
+static void	check_duplications(node **stack_a)
+{
+	node	*stack1;
+	node	*stack2;
+	int		count;
+
+	stack1 = *stack_a;
+	while (stack1)
+	{
+		stack2 = *stack_a;
+		count = 0;
+		while (stack2)
+		{
+			if (stack1->value == stack2->value)
+				count++;
+			stack2 = stack2->next;
+		}
+		if (count > 1)
+			error(&*stack_a);
+		stack1 = stack1->next;
+	}
+}
+
 int main(int argc, char **argv)
 {
 	node *stack_a;
@@ -28,8 +59,9 @@ int main(int argc, char **argv)
 	{
 		parsin(argv[i], &stack_a);
 		add_element(&stack_a, ft_atoi(argv[i--]));
+		stack_a = stack_a->first;
 	}
-
+	check_duplications(&stack_a);
 	/*if (list_size(stack_a) == 3)
 		three_algo(&stack_a);
 	if (list_size(stack_a) == 5)

@@ -15,14 +15,14 @@
 static void error(node **stack)
 {
     ft_printf("Error\n");
-    if (*stack)
+    if (*stack != NULL)
         clear_elements(&*stack);
-    exit(0);
+    exit(EXIT_FAILURE);
 }
 
 int is_num(char arg)
 {
-    if (arg <= '0' || arg >= '9')
+    if (arg < '0' || arg > '9')
         return (0);
     return (1);
 }
@@ -62,7 +62,7 @@ static int  has_non_num(char *arg)
         return (1);
     while (arg[i])
     {
-        if (arg[i] <= '0' || arg[i] >= '9')
+        if (arg[i] < '0' || arg[i] > '9')
             return (1);
         i++;
     }
@@ -71,24 +71,8 @@ static int  has_non_num(char *arg)
 
 void	parsin(char *arg, node **stack_a)
 {
-    int i;
-
-    i = 0;
     if (has_non_num(arg))
-        error(&((*stack_a)->first));
+            error(&*stack_a);
     if (non_int(arg))
-        error(&((*stack_a)->first));
-    if (*stack_a)
-    {
-        if (list_size(*stack_a) > 1)
-        {
-            while (*stack_a)
-            {
-                if (ft_atoi(arg) == (*stack_a)->value)
-                    error(&((*stack_a)->first));
-                *stack_a = (*stack_a)->next;
-            }
-            *stack_a = (*stack_a)->first;
-        }
-    }
+           error(&*stack_a);
 }
