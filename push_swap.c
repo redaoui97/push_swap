@@ -43,6 +43,18 @@ static void	check_duplications(node **stack_a)
 	}
 }
 
+static void	check_algo(node **stack_a, node **stack_b)
+{
+	/*if (list_size(stack_a) == 3)
+		three_algo(&stack_a);
+	if (list_size(stack_a) == 5)
+		five_algo(&stack_a);*/
+	bool_lis_calculator(&*stack_a);
+	send_zeros(&*stack_a, &*stack_b);
+	push_values(&*stack_a, &*stack_b);
+	show_elements(*stack_a);
+}
+
 int main(int argc, char **argv)
 {
 	node *stack_a;
@@ -51,7 +63,6 @@ int main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-
 	if (argc < 2)
 		return (0);
 	i = argc - 1;
@@ -62,15 +73,13 @@ int main(int argc, char **argv)
 		stack_a = stack_a->first;
 	}
 	check_duplications(&stack_a);
-	/*if (list_size(stack_a) == 3)
-		three_algo(&stack_a);
-	if (list_size(stack_a) == 5)
-		five_algo(&stack_a);*/
-	bool_lis_calculator(&stack_a);
-	send_zeros(&stack_a, &stack_b);
-	push_values(&stack_a, &stack_b);
-	show_elements(stack_a);
-
+	if (!is_sorted(&stack_a))
+		check_algo(&stack_a, &stack_b);
+	else
+	{
+		ft_printf("hna\n");
+		set_min_first(&stack_a);
+	}
 	clear_elements(&stack_a);
 	clear_elements(&stack_b);
 	return 0;

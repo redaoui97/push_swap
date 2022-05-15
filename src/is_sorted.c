@@ -12,7 +12,27 @@
 
 #include "../header/push_swap.h"
 
-int	is_sorted(node *stack)
+int	is_sorted(node **stack)
 {
-    return (0);
+    node    *previous;
+    node    *first_node;
+
+    first_node = *stack;
+    if (list_size(*stack) < 3)
+        return (1);
+    while (*stack)
+    {
+        if ((*stack)->position == 0)
+            previous = (*stack)->last;
+        else
+            previous = (*stack)->previous;
+        if ((*stack)->value < previous->value)
+        {
+            *stack = first_node;
+            return (0);
+        }
+        *stack = (*stack)->next;
+    }
+    *stack = first_node;
+    return (1);
 }

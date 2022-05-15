@@ -69,5 +69,5 @@ void		three_algo(node **stack);
 void		five_algo(node **stack);
 long int	ft_atoi(char *str);
 void		parsin(char *arg, node **stack_a);
-int			is_sorted(node *stack);
+int			is_sorted(node **stack);
 #endif
