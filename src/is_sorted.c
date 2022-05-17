@@ -23,11 +23,12 @@ int	is_sorted(node **stack)
     while (*stack)
     {
         if ((*stack)->position == 0)
-            previous = (*stack)->last;
+            previous = *stack;
         else
             previous = (*stack)->previous;
         if ((*stack)->value < previous->value)
         {
+            ft_printf("%d->%d",previous->value, (*stack)->value);
             *stack = first_node;
             return (0);
         }
