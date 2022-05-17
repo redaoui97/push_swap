@@ -14,5 +14,5 @@
 
 void	five_algo(node **stack)
 {
-
+    
 }

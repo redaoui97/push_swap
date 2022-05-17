@@ -136,6 +136,8 @@ void push_values(node **stack_a, node **stack_b)
 
 	while (*stack_b)
 	{
+		show_elements(*stack_a);
+		show_elements(*stack_b);
 		calculate_moves(&*stack_a, &*stack_b);
 		ptr_b = get_min_moves(*stack_b);
 		next = get_next_number(ptr_b->value, &*stack_a);

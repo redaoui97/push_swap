@@ -25,7 +25,8 @@ FUNCTIONS_printf = ft_printf/ft_printf ft_printf/ft_strlen \
 		   ft_printf/print_nbr ft_printf/print_nbr_unsigned \
 		   ft_printf/print_str
 FUNCTIONS_algo = push_swap algo/lis_algo/calculate_lis algo/lis_algo/bool_lis_calculator algo/lis_algo/send_zeros algo/lis_algo/calculate_moves \
-		   algo/lis_algo/first_calculation algo/lis_algo/second_calculation algo/lis_algo/push_values
+		   algo/lis_algo/first_calculation algo/lis_algo/second_calculation algo/lis_algo/push_values algo/three_elem_algo/three_algo \
+		   algo/five_elem_algo/five_algo
 FUNCTIONS_src = src/atoi src/parsin src/is_sorted
 
 OBJS_list = $(FUNCTIONS_list_management:=.o)

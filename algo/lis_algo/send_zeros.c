@@ -26,7 +26,11 @@ void	send_zeros(node **stack_a, node **stack_b)
 		if ((*stack_a)->bool_lis == 1)
 			ra(&*stack_a);
 		else
+		{
+			ft_printf("hh1\n");
 			pb(&*stack_a, &*stack_b);
+			ft_printf("hh2\n");
+		}
 		i++;
 	}	
 }
