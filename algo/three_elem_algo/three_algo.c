@@ -12,30 +12,20 @@
 
 #include "../../header/push_swap.h"
 
-static int  check_sequence(node *stack, int a, int b, int c)
-{
-    if (stack->value == a && stack->next->value == b && 
-    stack->next->next->value ==c)
-        return (1);
-    return (0);
-}
 void	three_algo(node **stack)
 {
-    if (check_sequence(*stack, 1, 3, 2))
-    {
-        ra(&stack);
-        sa(&stack);
-        return ;
-    }
-    if (check_sequence(*stack, 2, 1, 3))
-    {
-        sa(&stack);
-        return ;
-    }
-    if (check_sequence(*stack, 3, 2, 1))
-    {
-        sa(&stack);
-        ra(&stack);
-        return ;
-    }
+    int     a;
+    int     b;
+    int     c;
+
+    a = (*stack)->value;
+    b = (*stack)->next->value;
+    c = (*stack)->last->value;
+    if (a < c && c < b)
+        return (ra(&*stack), sa(&*stack), rra(&*stack));
+    if (b < a && a < c)
+        return (sa(&*stack));
+    if (c < b && b < a)
+        return (sa(&*stack), ra(&*stack), ra(&*stack));
+    set_min_first(&*stack);
 }
