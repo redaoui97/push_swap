@@ -12,9 +12,9 @@
 
 #include "../header/push_swap.h"
 
-node	*duplicate_node(node *old)
+t_node	*duplicate_node(t_node *old)
 {
-	node	*new;
+	t_node	*new;
 
 	new = new_node(0);
 	new->position = old->position;

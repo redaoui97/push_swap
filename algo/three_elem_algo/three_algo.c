@@ -12,7 +12,7 @@
 
 #include "../../header/push_swap.h"
 
-void	three_algo(node **stack)
+void	three_algo(t_node **stack)
 {
 	int	a;
 	int	b;

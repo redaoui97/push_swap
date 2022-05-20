@@ -12,9 +12,9 @@
 
 #include "../header/push_swap.h"
 
-node	*get_min(node *stack)
+t_node	*get_min(t_node *stack)
 {
-	node	*min;
+	t_node	*min;
 
 	min = stack;
 	while (stack)
@@ -26,10 +26,10 @@ node	*get_min(node *stack)
 	return (min);
 }
 
-int	is_sorted(node **stack)
+int	is_sorted(t_node **stack)
 {
-	node	*previous;
-	node	*first_node;
+	t_node	*previous;
+	t_node	*first_node;
 
 	first_node = *stack;
 	if (list_size(*stack) < 3)

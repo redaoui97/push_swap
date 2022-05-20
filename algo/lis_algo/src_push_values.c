@@ -12,10 +12,10 @@
 
 #include "../../header/push_swap.h"
 
-node	*get_biggest(node **stack_a)
+t_node	*get_biggest(t_node **stack_a)
 {
-	node	*first_node;
-	node	*biggest;
+	t_node	*first_node;
+	t_node	*biggest;
 
 	biggest = *stack_a;
 	first_node = *stack_a;
@@ -29,10 +29,10 @@ node	*get_biggest(node **stack_a)
 	return (biggest);
 }
 
-node	*get_next_number(int value, node **stack_a)
+t_node	*get_next_number(int value, t_node **stack_a)
 {
-	node	*next;
-	node	*first_node;
+	t_node	*next;
+	t_node	*first_node;
 	int		next_value;
 
 	next = get_biggest(&*stack_a);
@@ -48,9 +48,9 @@ node	*get_next_number(int value, node **stack_a)
 	return (next);
 }
 
-node	*get_min_moves(node *stack_b)
+t_node	*get_min_moves(t_node *stack_b)
 {
-	node	*min;
+	t_node	*min;
 
 	min = stack_b;
 	while (stack_b)
@@ -62,7 +62,7 @@ node	*get_min_moves(node *stack_b)
 	return (min);
 }
 
-void	get_element_top_a(node **stack, int value, int side)
+void	get_element_top_a(t_node **stack, int value, int side)
 {
 	while ((*stack)->first->value != value)
 	{
@@ -73,7 +73,7 @@ void	get_element_top_a(node **stack, int value, int side)
 	}
 }
 
-void	get_element_top_b(node **stack, int value, int side)
+void	get_element_top_b(t_node **stack, int value, int side)
 {
 	while ((*stack)->first->value != value)
 	{

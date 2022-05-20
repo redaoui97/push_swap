@@ -12,9 +12,9 @@
 
 #include "../header/push_swap.h"
 
-void	add_element(node **stack_a, int value)
+void	add_element(t_node **stack_a, int value)
 {
-	node	*new;
+	t_node	*new;
 
 	new = new_node(value);
 	new->previous = NULL;

@@ -12,11 +12,11 @@
 
 #include "../header/push_swap.h"
 
-static void	rra_cpy(node **stack_a)
+static void	rra_cpy(t_node **stack_a)
 {
 	int		permut;
 	int		bool_permut;
-	node	*ptr;
+	t_node	*ptr;
 
 	if (!*stack_a)
 		return ;
@@ -35,11 +35,11 @@ static void	rra_cpy(node **stack_a)
 	(*stack_a)->bool_lis = bool_permut;
 }
 
-static void	rrb_cpy(node **stack_b)
+static void	rrb_cpy(t_node **stack_b)
 {
 	int		permut;
 	int		bool_permut;
-	node	*ptr;
+	t_node	*ptr;
 
 	ptr = *stack_b;
 	permut = (*stack_b)->last->value;
@@ -56,7 +56,7 @@ static void	rrb_cpy(node **stack_b)
 	(*stack_b)->bool_lis = bool_permut;
 }
 
-void	rrr(node **stack_a, node **stack_b)
+void	rrr(t_node **stack_a, t_node **stack_b)
 {
 	rra_cpy(&*stack_a);
 	rrb_cpy(&*stack_b);

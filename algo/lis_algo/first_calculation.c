@@ -12,10 +12,10 @@
 
 #include "../../header/push_swap.h"
 
-void	first_calculation(node **stack_b)
+void	first_calculation(t_node **stack_b)
 {
 	int		count;
-	node	*first_ptr;
+	t_node	*first_ptr;
 	int		pos;
 
 	count = 1;

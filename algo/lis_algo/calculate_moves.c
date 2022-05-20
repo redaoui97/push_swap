@@ -12,7 +12,7 @@
 
 #include "../../header/push_swap.h"
 
-void	calculate_moves(node **stack_a, node **stack_b)
+void	calculate_moves(t_node **stack_a, t_node **stack_b)
 {
 	first_calculation(&*stack_b);
 	second_calculation(&*stack_a, &*stack_b);

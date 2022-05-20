@@ -12,10 +12,10 @@
 
 #include "../../header/push_swap.h"
 
-static node	*get_biggest_here(node **stack_a)
+static t_node	*get_biggest_here(t_node **stack_a)
 {
-	node	*first_node;
-	node	*biggest;
+	t_node	*first_node;
+	t_node	*biggest;
 
 	biggest = *stack_a;
 	first_node = *stack_a;
@@ -29,10 +29,10 @@ static node	*get_biggest_here(node **stack_a)
 	return (biggest);
 }
 
-static node	*get_next_number_here(int value, node **stack_a)
+static t_node	*get_next_number_here(int value, t_node **stack_a)
 {
-	node	*next;
-	node	*first_node;
+	t_node	*next;
+	t_node	*first_node;
 	int		next_value;
 
 	next = get_biggest_here(&*stack_a);
@@ -48,11 +48,11 @@ static node	*get_next_number_here(int value, node **stack_a)
 	return (next);
 }
 
-void	second_calculation(node **stack_a, node **stack_b)
+void	second_calculation(t_node **stack_a, t_node **stack_b)
 {
-	node	*first_node_a;
-	node	*first_node_b;
-	node	*next;
+	t_node	*first_node_a;
+	t_node	*first_node_b;
+	t_node	*next;
 
 	first_node_b = *stack_b;
 	first_node_a = *stack_a;

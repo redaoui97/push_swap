@@ -12,9 +12,9 @@
 
 #include "../../header/push_swap.h"
 
-void	send_zeros(node **stack_a, node **stack_b)
+void	send_zeros(t_node **stack_a, t_node **stack_b)
 {
-	node	*ptr_start;
+	t_node	*ptr_start;
 	int		size;
 	int		i;
 

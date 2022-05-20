@@ -12,7 +12,7 @@
 
 #include "../header/push_swap.h"
 
-void	error(node **stack)
+void	error(t_node **stack)
 {
 	ft_printf("Error\n");
 	if (*stack != NULL)

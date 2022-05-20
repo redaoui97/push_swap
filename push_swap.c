@@ -12,10 +12,10 @@
 
 #include "header/push_swap.h"
 
-static void	check_duplications(node **stack_a)
+static void	check_duplications(t_node **stack_a)
 {
-	node	*stack1;
-	node	*stack2;
+	t_node	*stack1;
+	t_node	*stack2;
 	int		count;
 
 	stack1 = *stack_a;
@@ -35,7 +35,7 @@ static void	check_duplications(node **stack_a)
 	}
 }
 
-static void	check_algo(node **stack_a, node **stack_b)
+static void	check_algo(t_node **stack_a, t_node **stack_b)
 {
 	if (list_size(*stack_a) == 3)
 		return (three_algo(&*stack_a));
@@ -50,8 +50,8 @@ static void	check_algo(node **stack_a, node **stack_b)
 
 int	main(int argc, char **argv)
 {
-	node	*stack_a;
-	node	*stack_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 	int		i;
 
 	stack_a = NULL;

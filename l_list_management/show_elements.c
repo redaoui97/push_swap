@@ -12,7 +12,7 @@
 
 #include "../header/push_swap.h"
 
-void	show_elements(node *stack_a)
+void	show_elements(t_node *stack_a)
 {
 	ft_printf("-----------------------------------------------\n");
 	ft_printf("|index |   address    |value|lis| bool| moves |\n");

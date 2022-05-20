@@ -12,7 +12,7 @@
 
 #include "../../header/push_swap.h"
 
-static void	sub_function(node **stack, int *value, int *count, int *i)
+static void	sub_function(t_node **stack, int *value, int *count, int *i)
 {
 	if ((*stack)->value > *value)
 	{
@@ -26,10 +26,10 @@ static void	sub_function(node **stack, int *value, int *count, int *i)
 	(*i)++;
 }
 
-void	calculate_lis(node **stack_a)
+void	calculate_lis(t_node **stack_a)
 {
-	node	*ptr_first;
-	node	*ptr_a;
+	t_node	*ptr_first;
+	t_node	*ptr_a;
 	int		i;
 	int		count;
 	int		value;

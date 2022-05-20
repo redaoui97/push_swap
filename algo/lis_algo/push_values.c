@@ -19,7 +19,7 @@ static int	min_comp(int a, int b)
 	return (a);
 }
 
-static void	rotate(node **s, node **stack_b, int next, int side)
+static void	rotate(t_node **s, t_node **stack_b, int next, int side)
 {
 	int	ptr_b;
 
@@ -47,7 +47,7 @@ static void	rotate(node **s, node **stack_b, int next, int side)
 	}
 }
 
-static void	check_moves(node *nodec, int *side, node *stack)
+static void	check_moves(t_node *nodec, int *side, t_node *stack)
 {
 	if (((float)(nodec->position) / list_size(stack->first)) > 0.5)
 		*side = 1;
@@ -55,13 +55,13 @@ static void	check_moves(node *nodec, int *side, node *stack)
 		*side = 0;
 }
 
-void	push_values(node **stack_a, node **stack_b)
+void	push_values(t_node **stack_a, t_node **stack_b)
 {
 	int		side_a;
 	int		side_b;
-	node	*next;
-	node	*next2;
-	node	*ptr_b;
+	t_node	*next;
+	t_node	*next2;
+	t_node	*ptr_b;
 
 	while (*stack_b)
 	{

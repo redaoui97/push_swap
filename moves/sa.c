@@ -12,7 +12,7 @@
 
 #include "../header/push_swap.h"
 
-void	sa(node **stack_a)
+void	sa(t_node **stack_a)
 {
 	int	permu;
 	int	bool_permut;

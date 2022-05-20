@@ -12,9 +12,9 @@
 
 #include "../../header/push_swap.h"
 
-static node	*get_lis(node *stack_a)
+static t_node	*get_lis(t_node *stack_a)
 {
-	node	*ptr;
+	t_node	*ptr;
 
 	ptr = stack_a;
 	while (stack_a)
@@ -26,9 +26,9 @@ static node	*get_lis(node *stack_a)
 	return (ptr);
 }
 
-void	bool_lis_calculator(node **stack_a)
+void	bool_lis_calculator(t_node **stack_a)
 {
-	node	*ptr_first;
+	t_node	*ptr_first;
 	int		i;
 	int		value;
 

@@ -12,7 +12,7 @@
 
 #include "../header/push_swap.h"
 
-static void	sa_cpy(node **stack_a)
+static void	sa_cpy(t_node **stack_a)
 {
 	int	permu;
 	int	bool_permut;
@@ -27,7 +27,7 @@ static void	sa_cpy(node **stack_a)
 	(*stack_a)->next->bool_lis = bool_permut;
 }
 
-static void	sb_cpy(node **stack_b)
+static void	sb_cpy(t_node **stack_b)
 {
 	int	permu;
 	int	bool_permut;
@@ -42,7 +42,7 @@ static void	sb_cpy(node **stack_b)
 	(*stack_b)->next->bool_lis = bool_permut;
 }
 
-void	ss(node **stack_a, node **stack_b)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
 	sa_cpy(&(*stack_a));
 	sb_cpy(&(*stack_b));

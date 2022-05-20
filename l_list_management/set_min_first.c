@@ -12,9 +12,9 @@
 
 #include "../header/push_swap.h"
 
-static node	*get_min(node *stack_a)
+static t_node	*get_min(t_node *stack_a)
 {
-	node	*min;
+	t_node	*min;
 
 	min = stack_a;
 	while (stack_a)
@@ -26,10 +26,10 @@ static node	*get_min(node *stack_a)
 	return (min);
 }
 
-void	set_min_first(node **stack_a)
+void	set_min_first(t_node **stack_a)
 {
-	node	*first_node;
-	node	*min_node;
+	t_node	*first_node;
+	t_node	*min_node;
 	int		min;
 
 	first_node = *stack_a;

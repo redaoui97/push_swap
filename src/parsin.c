@@ -28,7 +28,7 @@ static int	has_non_num(char *arg)
 	return (0);
 }
 
-void	parsin(char *arg, node **stack_a)
+void	parsin(char *arg, t_node **stack_a)
 {
 	if (has_non_num(arg))
 		error(&*stack_a);

@@ -12,11 +12,11 @@
 
 #include "../header/push_swap.h"
 
-void	rrb(node **stack_b)
+void	rrb(t_node **stack_b)
 {
 	int		permut;
 	int		bool_permut;
-	node	*ptr;
+	t_node	*ptr;
 
 	if (!*stack_b)
 		return ;

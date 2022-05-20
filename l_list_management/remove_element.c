@@ -12,10 +12,10 @@
 
 #include "../header/push_swap.h"
 
-void	remove_element(node **stack_a)
+void	remove_element(t_node **stack_a)
 {
-	node	*ptr;
-	node	*ptr_next;
+	t_node	*ptr;
+	t_node	*ptr_next;
 
 	ptr = *stack_a;
 	ptr_next = (*stack_a)->next;

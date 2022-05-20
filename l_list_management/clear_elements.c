@@ -12,9 +12,9 @@
 
 #include "../header/push_swap.h"
 
-void	clear_elements(node **stack_a)
+void	clear_elements(t_node **stack_a)
 {
-	node	*perm;
+	t_node	*perm;
 
 	while (*stack_a)
 	{

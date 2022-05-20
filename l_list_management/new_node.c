@@ -12,11 +12,11 @@
 
 #include "../header/push_swap.h"
 
-node	*new_node(int value)
+t_node	*new_node(int value)
 {
-	node	*n;
+	t_node	*n;
 
-	n = (node *)malloc(sizeof(node));
+	n = (t_node *)malloc(sizeof(t_node));
 	if (!n)
 		return (NULL);
 	n->bool_lis = 0;
