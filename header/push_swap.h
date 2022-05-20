@@ -6,16 +6,16 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:21:41 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/15 09:36:42 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 20:09:29 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
 typedef struct nodes
 {
@@ -28,7 +28,7 @@ typedef struct nodes
 	struct nodes	*next;
 	struct nodes	*first;
 	struct nodes	*last;
-} node;
+}	node;
 
 int			print_addresse(unsigned long int adr);
 int			ft_printf(const char *f, ...);
