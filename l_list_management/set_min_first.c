@@ -59,13 +59,13 @@ void set_min_first(node **stack_a)
     if ((position / list_size(*stack_a)) >= 0.5)
     {
         while (min != (*stack_a)->first->value)
-            rra(&*stack_a);
+            ra(&*stack_a);
     }
     else
     {
         while((*stack_a)->value != min)
         {
-            ra(&*stack_a);
+            rra(&*stack_a);
 			position--;
         }
     }
