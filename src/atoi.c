@@ -6,12 +6,11 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 18:33:50 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/26 18:36:25 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:39:02 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
 
 static int	ft_isdigit(int c)
 {
@@ -24,8 +23,8 @@ static int	ft_isdigit(int c)
 long int	ft_atoi(char *str)
 {
 	long int	res;
-	int	i;
-	int	neg;
+	int			i;
+	int			neg;
 
 	res = 0;
 	if (!*str)

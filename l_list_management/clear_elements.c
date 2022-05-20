@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:57 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/26 18:28:19 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:21:43 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	clear_elements(node **stack_a)
 {
-	node *perm;
-	
-	while(*stack_a)
+	node	*perm;
+
+	while (*stack_a)
 	{
 		perm = (*stack_a)->next;
 		free (*stack_a);

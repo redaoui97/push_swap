@@ -6,44 +6,44 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:31:58 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/12 15:20:12 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:25:35 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-static node *get_min(node *stack_a)
+static node	*get_min(node *stack_a)
 {
-    node    *min;
+	node	*min;
 
-    min = stack_a;
-    while (stack_a)
-    {
-        if (stack_a->value < min->value)
-            min = stack_a;
-        stack_a = stack_a->next;
-    }
-    return (min);
+	min = stack_a;
+	while (stack_a)
+	{
+		if (stack_a->value < min->value)
+			min = stack_a;
+		stack_a = stack_a->next;
+	}
+	return (min);
 }
 
-void set_min_first(node **stack_a)
+void	set_min_first(node **stack_a)
 {
-	node    *first_node;
-    node    *min_node;
-    int     min;
+	node	*first_node;
+	node	*min_node;
+	int		min;
 
-    first_node = *stack_a;
-    min_node = get_min(*stack_a);
-    min = min_node->value;
-    if (((min_node->position + 1) / list_size((*stack_a)->first)) >= 0.5)
-    {
-        while (min != (*stack_a)->first->value)
-            rra(&*stack_a);
-    }
-    else
-    {
-        while((*stack_a)->first->value != min)
-            ra(&*stack_a);
-    }
-    *stack_a = (*stack_a)->first;
+	first_node = *stack_a;
+	min_node = get_min(*stack_a);
+	min = min_node->value;
+	if (((min_node->position + 1) / list_size((*stack_a)->first)) >= 0.5)
+	{
+		while (min != (*stack_a)->first->value)
+			rra(&*stack_a);
+	}
+	else
+	{
+		while ((*stack_a)->first->value != min)
+			ra(&*stack_a);
+	}
+	*stack_a = (*stack_a)->first;
 }

@@ -6,12 +6,11 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:10:50 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 16:45:14 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:37:57 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
 
 static void	ra_cpy(node **stack_a)
 {

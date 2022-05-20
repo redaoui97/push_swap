@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:52 by rnabil            #+#    #+#             */
-/*   Updated: 2022/03/21 12:32:57 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:21:13 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	add_element(node **stack_a, int value)
 	new = new_node(value);
 	new->previous = NULL;
 	new->first = new;
-	if(!(*stack_a))
+	if (!(*stack_a))
 	{
 		new->next = NULL;
 		new->last = new;
-		*stack_a=new;
+		*stack_a = new;
 		return ;
 	}
 	new->next = *stack_a;

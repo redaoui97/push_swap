@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:19:58 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 17:58:22 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:37:03 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sa(node **stack_a)
 	int	bool_permut;
 
 	if (list_size(*stack_a) < 2)
-		return;
+		return ;
 	permu = (*stack_a)->value;
 	bool_permut = (*stack_a)->bool_lis;
 	(*stack_a)->value = (*stack_a)->next->value;

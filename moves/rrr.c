@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:00:57 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 17:50:39 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:36:53 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rra_cpy(node **stack_a)
 	node	*ptr;
 
 	if (!*stack_a)
-		return;
+		return ;
 	ptr = *stack_a;
 	permut = (*stack_a)->last->value;
 	bool_permut = (*stack_a)->last->bool_lis;

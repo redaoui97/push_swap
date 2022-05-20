@@ -75,5 +75,8 @@ node		*get_next_number(int value, node **stack_a);
 node		*get_min_moves(node *stack_b);
 void		get_element_top_a(node **stack, int value, int side);
 void		get_element_top_b(node **stack, int value, int side);
-
+void		error(node **stack);
+int			is_num(char arg);
+int			ft_strcmp(char *s1, char *s2);
+int			non_int(char *arg);
 #endif

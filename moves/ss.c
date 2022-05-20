@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:20:31 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 18:15:44 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:37:26 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	sa_cpy(node **stack_a)
 	int	bool_permut;
 
 	if (list_size(*stack_a) < 2)
-		return;
+		return ;
 	permu = (*stack_a)->value;
 	bool_permut = (*stack_a)->bool_lis;
 	(*stack_a)->value = (*stack_a)->next->value;
@@ -33,7 +33,7 @@ static void	sb_cpy(node **stack_b)
 	int	bool_permut;
 
 	if (list_size(*stack_b) < 2)
-		return;
+		return ;
 	permu = (*stack_b)->value;
 	bool_permut = (*stack_b)->bool_lis;
 	(*stack_b)->value = (*stack_b)->next->value;

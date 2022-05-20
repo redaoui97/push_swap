@@ -12,14 +12,6 @@
 
 #include "header/push_swap.h"
 
-static void error(node **stack)
-{
-    ft_printf("Error\n");
-    if (*stack != NULL)
-        clear_elements(&*stack);
-    exit(EXIT_FAILURE);
-}
-
 static void	check_duplications(node **stack_a)
 {
 	node	*stack1;

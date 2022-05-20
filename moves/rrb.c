@@ -6,7 +6,7 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:57:39 by rnabil            #+#    #+#             */
-/*   Updated: 2022/04/02 17:51:36 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:36:07 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rrb(node **stack_b)
 	node	*ptr;
 
 	if (!*stack_b)
-		return;
+		return ;
 	ptr = *stack_b;
 	permut = (*stack_b)->last->value;
 	bool_permut = (*stack_b)->last->bool_lis;
