@@ -12,62 +12,38 @@
 
 #include "../header/push_swap.h"
 
-static int  get_min(node *stack_a)
+static node *get_min(node *stack_a)
 {
-    int min;
+    node    *min;
 
-    min = stack_a->value;
+    min = stack_a;
     while (stack_a)
     {
-        if (stack_a->value < min)
-            min = stack_a->value;
+        if (stack_a->value < min->value)
+            min = stack_a;
         stack_a = stack_a->next;
     }
     return (min);
 }
 
-static int  get_min_index(node *stack_a)
-{
-    int min;
-    int index;
-    int i;
-
-    min = stack_a->value;
-    i = 0;
-    while (stack_a)
-    {
-        if (stack_a->value < min)
-        {
-            min = stack_a->value;
-            index = i;
-        }
-        stack_a = stack_a->next;
-        i++;
-    }
-    return (index);
-}
-
 void set_min_first(node **stack_a)
 {
 	node    *first_node;
+    node    *min_node;
     int     min;
-    int     position;
 
     first_node = *stack_a;
-    min = get_min(*stack_a);
-    position = get_min_index(*stack_a);
-    if ((position / list_size(*stack_a)) >= 0.5)
+    min_node = get_min(*stack_a);
+    min = min_node->value;
+    if (((min_node->position + 1) / list_size((*stack_a)->first)) >= 0.5)
     {
         while (min != (*stack_a)->first->value)
-            ra(&*stack_a);
+            rra(&*stack_a);
     }
     else
     {
-        while((*stack_a)->value != min)
-        {
-            rra(&*stack_a);
-			position--;
-        }
+        while((*stack_a)->first->value != min)
+            ra(&*stack_a);
     }
     *stack_a = (*stack_a)->first;
 }
