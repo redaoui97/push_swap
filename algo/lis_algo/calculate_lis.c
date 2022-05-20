@@ -14,16 +14,16 @@
 
 static void	sub_function(node **stack, int *value, int *count, int *i)
 {
-	if ((*stack)->value > value)
+	if ((*stack)->value > *value)
 	{
-		count++;
-		value = (*stack)->value;
+		(*count)++;
+		*value = (*stack)->value;
 	}
 	if ((*stack)->next == NULL)
 		*stack = (*stack)->first;
 	else
 		*stack = (*stack)->next;
-	i++;
+	(*i)++;
 }
 
 void	calculate_lis(node **stack_a)
@@ -45,18 +45,7 @@ void	calculate_lis(node **stack_a)
 		value = ptr_a->value;
 		(*stack_a)->lis = 0;
 		while (i < list_size(ptr_first))
-		{
-			if ((*stack_a)->value > value)
-			{
-				count++;
-				value = (*stack_a)->value;
-			}
-			if ((*stack_a)->next == NULL)
-				*stack_a = (*stack_a)->first;
-			else
-				*stack_a = (*stack_a)->next;
-			i++;
-		}
+			sub_function(&*stack_a, &value, &count, &i);
 		ptr_a->lis = count;
 		ptr_a = ptr_a->next;
 	}

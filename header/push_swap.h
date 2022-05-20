@@ -70,4 +70,10 @@ void		five_algo(node **stack_a, node **stack_b);
 long int	ft_atoi(char *str);
 void		parsin(char *arg, node **stack_a);
 int			is_sorted(node **stack);
+node		*get_biggest(node **stack_a);
+node		*get_next_number(int value, node **stack_a);
+node		*get_min_moves(node *stack_b);
+void		get_element_top_a(node **stack, int value, int side);
+void		get_element_top_b(node **stack, int value, int side);
+
 #endif

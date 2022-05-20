@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   second_calculation.c                               :+:      :+:    :+:   */
+/*   src_push_values.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/08 02:31:54 by rnabil            #+#    #+#             */
-/*   Updated: 2022/05/20 17:20:25 by rnabil           ###   ########.fr       */
+/*   Created: 2022/05/20 17:21:11 by rnabil            #+#    #+#             */
+/*   Updated: 2022/05/20 18:12:14 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/push_swap.h"
 
-static node	*get_biggest_here(node **stack_a)
+node	*get_biggest(node **stack_a)
 {
 	node	*first_node;
 	node	*biggest;
@@ -29,13 +29,13 @@ static node	*get_biggest_here(node **stack_a)
 	return (biggest);
 }
 
-static node	*get_next_number_here(int value, node **stack_a)
+node	*get_next_number(int value, node **stack_a)
 {
 	node	*next;
 	node	*first_node;
 	int		next_value;
 
-	next = get_biggest_here(&*stack_a);
+	next = get_biggest(&*stack_a);
 	first_node = *stack_a;
 	*stack_a = (*stack_a)->first;
 	while (*stack_a)
@@ -48,23 +48,38 @@ static node	*get_next_number_here(int value, node **stack_a)
 	return (next);
 }
 
-void	second_calculation(node **stack_a, node **stack_b)
+node	*get_min_moves(node *stack_b)
 {
-	node	*first_node_a;
-	node	*first_node_b;
-	node	*next;
+	node	*min;
 
-	first_node_b = *stack_b;
-	first_node_a = *stack_a;
-	while (*stack_b)
+	min = stack_b;
+	while (stack_b)
 	{
-		next = get_next_number_here((*stack_b)->value, &*stack_a);
-		if (next->position <= (list_size(first_node_a) / 2))
-			(*stack_b)->moves_count += next->position;
-		else
-			(*stack_b)->moves_count += list_size(first_node_a) - next->position;
-		*stack_b = (*stack_b)->next;
+		if (stack_b->moves_count < min->moves_count)
+			min = stack_b;
+		stack_b = stack_b->next;
 	}
-	*stack_a = first_node_a;
-	*stack_b = first_node_b;
+	return (min);
+}
+
+void	get_element_top_a(node **stack, int value, int side)
+{
+	while ((*stack)->first->value != value)
+	{
+		if (!side)
+			ra(&*stack);
+		else
+			rra(&*stack);
+	}
+}
+
+void	get_element_top_b(node **stack, int value, int side)
+{
+	while ((*stack)->first->value != value)
+	{
+		if (!side)
+			rb(&*stack);
+		else
+			rrb(&*stack);
+	}
 }
