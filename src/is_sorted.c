@@ -12,6 +12,20 @@
 
 #include "../header/push_swap.h"
 
+node    *get_min(node *stack)
+{
+    node    *min;
+
+    min = stack;
+    while (stack)
+    {
+        if (stack->value < min->value)
+            min = stack;
+        stack = stack->next;
+    }
+    return (min);
+}
+
 int	is_sorted(node **stack)
 {
     node    *previous;
@@ -20,6 +34,8 @@ int	is_sorted(node **stack)
     first_node = *stack;
     if (list_size(*stack) < 3)
         return (1);
+    if ((*stack)->last->value == get_min(*stack)->value)
+        return (rra(&*stack), 1);
     while (*stack)
     {
         if ((*stack)->position == 0)
