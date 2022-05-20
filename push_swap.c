@@ -45,15 +45,13 @@ static void	check_duplications(node **stack_a)
 
 static void	check_algo(node **stack_a, node **stack_b)
 {
-	ft_printf("hna bdina %d\n",list_size(*stack_a));
 	if (list_size(*stack_a) == 3)
 		return (three_algo(&*stack_a));
-	/*if (list_size(stack_a) == 5)
-		return (five_algo(&stack_a));*/
+	if (list_size(*stack_a) == 5)
+		return (five_algo(&*stack_a, &*stack_b));
 	bool_lis_calculator(&*stack_a);
 	send_zeros(&*stack_a, &*stack_b);
 	push_values(&*stack_a, &*stack_b);
-	show_elements(*stack_a);
 }
 
 int main(int argc, char **argv)
@@ -73,15 +71,12 @@ int main(int argc, char **argv)
 		add_element(&stack_a, ft_atoi(argv[i--]));
 		stack_a = stack_a->first;
 	}
-	
 	check_duplications(&stack_a);
 	show_elements(stack_a);
 	if (!is_sorted(&stack_a))
 		check_algo(&stack_a, &stack_b);
 	else
 		set_min_first(&stack_a);
-
-	ft_printf("salina\n");
 	show_elements(stack_a);
 	clear_elements(&stack_a);
 	clear_elements(&stack_b);

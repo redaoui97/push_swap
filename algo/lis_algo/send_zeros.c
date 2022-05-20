@@ -27,10 +27,8 @@ void	send_zeros(node **stack_a, node **stack_b)
 			ra(&*stack_a);
 		else
 		{
-			ft_printf("hh1\n");
 			pb(&*stack_a, &*stack_b);
-			ft_printf("hh2\n");
 		}
 		i++;
-	}	
+	}
 }

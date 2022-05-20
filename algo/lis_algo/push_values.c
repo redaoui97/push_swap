@@ -134,14 +134,8 @@ void push_values(node **stack_a, node **stack_b)
 	node 	*next2;
 	node 	*ptr_b;
 
-	ft_printf("Dkhlna l lis\n");
 	while (*stack_b)
 	{
-		ft_printf("bdina 1\n");
-		show_elements(*stack_a);
-		ft_printf("bdina 2\n");
-		show_elements(*stack_b);
-		ft_printf("bdina 3\n");
 		calculate_moves(&*stack_a, &*stack_b);
 		ptr_b = get_min_moves(*stack_b);
 		next = get_next_number(ptr_b->value, &*stack_a);

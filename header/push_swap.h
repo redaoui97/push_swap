@@ -66,7 +66,7 @@ void		first_calculation(node **stack_b);
 void		second_calculation(node **stack_a, node **stack_b);
 void		push_values(node **stack_a, node **stack_b);
 void		three_algo(node **stack);
-void		five_algo(node **stack);
+void		five_algo(node **stack_a, node **stack_b);
 long int	ft_atoi(char *str);
 void		parsin(char *arg, node **stack_a);
 int			is_sorted(node **stack);
