@@ -1,3 +1,7 @@
+<style>
+  test{ color:red;
+        size: 25px;}
+</style>
 <h1>Push swap</h1>
 4th project on the 42 cursus
 
@@ -53,7 +57,7 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   <li>rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
   <li>rrr:rra and rrb at the same time.</li>
   </ul>
-  	<h3 style="color: blue;">Third step: Implement sorting algorithm</h3>
+  	<test>Third step: Implement sorting algorithm<test>
 		Cases: 
 		<ul>
 			<li>3 random numbers: There are 6 possible cases for 3 random numbers, but 3 of them can get handled by is_sorted functions (a function that checks if the list is sorted) so we can use a naive sorting algorithm to sort the list in less than 3 steps</li>
