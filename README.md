@@ -1,6 +1,6 @@
 <style>
   test{ color:red;
-        size: 25px;}
+        size: 55px;}
 </style>
 <h1>Push swap</h1>
 4th project on the 42 cursus
