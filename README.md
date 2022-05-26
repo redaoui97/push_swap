@@ -76,6 +76,10 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
       Second step: it checks if the list is sorted, if so it sends the minimum number to the top of the stack if it already wasn't.<br>
       Third step: executes one of the 3 sorting algorithms depending on the how many numbers are there in the stack: three_elem_elgo for 3 elements, five_elem_algo for 5, and lis_algo for the 6+ elements.<br>
       And finally we free the elements in both stacks using the clear_elements functions.
+      <h3>Tester script</h3>
+      ```sh tester.sh <size_desired>```
+      I made a little script that: Generates the size given in parameters of unduplicated integers and compares and gives you the result given by the school tester and the number of moves.
+      (Make sure you have Generated the executable using Make to get "push_swap" and named the school tester's "checker")
   </p>
 
 
