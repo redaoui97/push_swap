@@ -55,7 +55,6 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   </ul>
   	<h3>Third step: Implement sorting algorithm</h3>
   		<h4>I - picking the fastest sorting algorithm</h4>
-		*work inspired from <a href=https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a>here</a>
 		Cases: 
 		<ul>
 			<li>3 random numbers: There are 5 possible cases for 3 random numbers so we can use a naive sorting algorithm to sort the list in few steps, by manually sorting them. (I need to add an image here)</li>
