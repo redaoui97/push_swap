@@ -57,8 +57,18 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   		<h4>I - picking the fastest sorting algorithm</h4>
 		Cases: 
 		<ul>
-			<li>3 random numbers: There are 5 possible cases for 3 random numbers so we can use a naive sorting algorithm to sort the list in few steps, by manually sorting them. (I need to add an image here)</li>
-			<li>5 random numbers: </li> 
+			<li>3 random numbers: There are 6 possible cases for 3 random numbers, but 3 of them can get handled by is_sorted functions (a function that checks if the list is sorted) so we can use a naive sorting algorithm to sort the list in less than 3 steps</li>
+			<li>5 random numbers: We'll use the same algorithm that we've used with the 3 random numbers algo. First we push the 2 smallest numbers in stack_a into stack_b then we sort the 3 elements in stack_a using the 3 elements algorithms, before pushing back the 2 elements from stack_b back again to stack_a</li>
+      <li>Now for the most important algorithm of the this project:<br>
+      This algorhtm works with 6+ numbers (it sometimes doesn't give 5/5 points on correction for the 500 numbers list).<br>
+      The idea is simple : 
+      <ol>
+        <li>Calculate the longest increasing subsequence in the stack (find the longest subsequence in a list of numbers)</li>
+        <li>Sends the numbers that doesn't belong to the longest increasing subsequence to stack_b</li>
+        <li>Push the values back from stack_b into stack_a according to the number of moves requered to be in the right position in stack_a</li>
+        <li>And finally sending the minimum number to the head of stack_a</li>
+      </ol>
+      </li>
   </p>
 
 
