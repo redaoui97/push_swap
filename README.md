@@ -1,6 +1,5 @@
 <style>
-  test{ color:red;
-        size: 55px;}
+  h3{ color:red;}
 </style>
 <h1>Push swap</h1>
 4th project on the 42 cursus
@@ -72,6 +71,11 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
         <li>And finally sending the minimum number to the head of stack_a</li>
       </ol>
       </li>
+      <h3>The program sequence:<h3>
+      This program follows 3 steps: <br>First step: it reads the elements from the parameters, and makes sure the parsin is right (doesn't have any non-num or are non-integers or there are duplicated integers in the list).<br>
+      Second step: it checks if the list is sorted, if so it sends the minimum number to the top of the stack if it already wasn't.<br>
+      Third step: executes one of the 3 sorting algorithms depending on the how many numbers are there in the stack: three_elem_elgo for 3 elements, five_elem_algo for 5, and lis_algo for the 6+ elements.<br>
+      And finally we free the elements in both stacks using the clear_elements functions.
   </p>
 
 
