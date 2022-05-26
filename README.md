@@ -41,17 +41,17 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
   </ul>
   <h3>Second step: Implement the movees</h3>
   <ul>
-  <li>(done)sa(swap a):Swap the first 2 elements at the top of stacka. Do nothing if there is only one or no elements.</li>
-  <li>(done)sb(swap b):Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.</li>
-  <li>(done)ss:sa and sb at the same time.</li>
-  <li>(done)pa(push a):Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.</li>
-  <li>(done)pb(push b):Take the first element at the top of a and put it at the top of b. Do nothing if a isempty.</li>
-  <li>(done)ra(rotate a):Shift up all elements of stack a by 1. The first element becomes the last one.</li>
-  <li>(done)rb(rotate b):Shift up all elements of stack b by 1. The first element becomes the last one.</li>
-  <li>(done)rr:ra and rb at the same time.</li>
-  <li>(done)rra(reverse rotate a):Shift down all elements of stack a by 1. The last element becomes the first one.</li>
-  <li>(done)rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
-  <li>(done)rrr:rra and rrb at the same time.</li>
+  <li>sa(swap a):Swap the first 2 elements at the top of stacka. Do nothing if there is only one or no elements.</li>
+  <li>sb(swap b):Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.</li>
+  <li>ss:sa and sb at the same time.</li>
+  <li>pa(push a):Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.</li>
+  <li>pb(push b):Take the first element at the top of a and put it at the top of b. Do nothing if a isempty.</li>
+  <li>ra(rotate a):Shift up all elements of stack a by 1. The first element becomes the last one.</li>
+  <li>rb(rotate b):Shift up all elements of stack b by 1. The first element becomes the last one.</li>
+  <li>rr:ra and rb at the same time.</li>
+  <li>rra(reverse rotate a):Shift down all elements of stack a by 1. The last element becomes the first one.</li>
+  <li>rrb(reverse rotate b):Shift down all elements of stack b by 1. The last element becomes the first one.</li>
+  <li>rrr:rra and rrb at the same time.</li>
   </ul>
   	<h3>Third step: Implement sorting algorithm</h3>
   		<h4>I - picking the fastest sorting algorithm</h4>
