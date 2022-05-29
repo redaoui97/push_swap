@@ -16,5 +16,4 @@ void	pa(t_node **stack_a, t_node **stack_b)
 {
 	add_element(&*stack_a, (*stack_b)->value);
 	remove_element(&*stack_b);
-	ft_printf("pa\n");
 }

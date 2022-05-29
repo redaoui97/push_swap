@@ -16,5 +16,4 @@ void	pb(t_node **stack_a, t_node **stack_b)
 {
 	add_element(&*stack_b, (*stack_a)->value);
 	remove_element(&*stack_a);
-	ft_printf("pb\n");
 }

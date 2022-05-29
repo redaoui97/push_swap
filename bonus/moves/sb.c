@@ -25,5 +25,4 @@ void	sb(t_node **stack_b)
 	(*stack_b)->bool_lis = (*stack_b)->next->bool_lis;
 	(*stack_b)->next->value = permu;
 	(*stack_b)->next->bool_lis = bool_permut;
-	ft_printf("sb\n");
 }

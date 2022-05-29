@@ -33,5 +33,4 @@ void	rrb(t_node **stack_b)
 	*stack_b = ptr;
 	(*stack_b)->value = permut;
 	(*stack_b)->bool_lis = bool_permut;
-	ft_printf("rrb\n");
 }

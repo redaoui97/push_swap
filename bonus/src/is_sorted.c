@@ -12,7 +12,7 @@
 
 #include "../header/checker.h"
 
-t_node	*get_min(t_node *stack)
+static t_node	*get_min(t_node *stack)
 {
 	t_node	*min;
 

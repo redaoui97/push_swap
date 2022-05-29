@@ -36,5 +36,4 @@ void	rb(t_node **stack_b)
 		*stack_b = (*stack_b)->next;
 	}
 	*stack_b = ptr;
-	ft_printf("rb\n");
 }

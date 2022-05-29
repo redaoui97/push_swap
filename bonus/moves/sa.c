@@ -25,5 +25,4 @@ void	sa(t_node **stack_a)
 	(*stack_a)->bool_lis = (*stack_a)->next->bool_lis;
 	(*stack_a)->next->value = permu;
 	(*stack_a)->next->bool_lis = bool_permut;
-	ft_printf("sa\n");
 }

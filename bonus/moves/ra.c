@@ -36,5 +36,4 @@ void	ra(t_node **stack_a)
 		*stack_a = (*stack_a)->next;
 	}
 	*stack_a = ptr;
-	ft_printf("ra\n");
 }

@@ -68,5 +68,4 @@ void	rr(t_node **stack_a, t_node **stack_b)
 {
 	ra_cpy(&(*stack_a));
 	rb_cpy(&(*stack_b));
-	ft_printf("rr\n");
 }

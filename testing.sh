@@ -9,7 +9,7 @@ check_function () {
     do
         if [ $num -eq $num_array[$i] ]
         then
-            num=$((-10 + $RANDOM % 0))
+            num=$((-10 + $RANDOM % -1))
         fi
         if [ $num -eq $num_array[$i] ]
         then
