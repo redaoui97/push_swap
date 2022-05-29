@@ -70,7 +70,7 @@ long int ft_atoi(char *str);
 int is_sorted(t_node **stack);
 // t_node *get_min(t_node *stack);
 void parsin(char *arg, t_node **stack_a);
-void error(t_node **stack);
+void error(t_node **stack_a);
 int is_num(char arg);
 int ft_strcmp(char *s1, char *s2);
 int non_int(char *arg);

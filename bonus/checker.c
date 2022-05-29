@@ -12,19 +12,17 @@
 
 #include "header/checker.h"
 
-static void error(t_node **stack_a, t_node **stack_b)
+static void error1(t_node **stack_a, t_node **stack_b)
 {
     ft_printf("Error\n");
-    if (*stack != NULL)
-    {
-        clear_elements(&*stac_a);
-        clear_elements(&*stack_b);
-    }
+    clear_elements(&*stack_a);
+    clear_elements(&*stack_b);
     exit(EXIT_FAILURE);
 }
 
 void parsing(char *line, t_node **stack_a, t_node **stack_b)
 {
+    ft_printf("hh\n");
     if (ft_strcmp(line, "pa\n"))
         return (pa(&*stack_a, &*stack_b));
     if (ft_strcmp(line, "pb\n"))
@@ -47,7 +45,7 @@ void parsing(char *line, t_node **stack_a, t_node **stack_b)
         return (sb(&*stack_b));
     if (ft_strcmp(line, "ss\n"))
         return (ss(&*stack_a, &*stack_b));
-    error(&*stack_a, &*stack_b);
+    error1(&*stack_a, &*stack_b);
 }
 
 int main(int argc, char **argv)
@@ -71,11 +69,12 @@ int main(int argc, char **argv)
     line = get_next_line(0);
     while (line)
     {
+        ft_printf("%s\n", line);
         parsing(line, &stack_a, &stack_b);
-        line = get_next_line(0);
+        line = get_next_line(1);
     }
-    if (!is_sorted(&stack_a))
-        ft_printf("Error\n");
+    if (is_sorted(&stack_a))
+        ft_printf("OK\n");
     else
         ft_printf("OK\n");
     clear_elements(&stack_a);
