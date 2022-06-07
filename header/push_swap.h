@@ -30,6 +30,9 @@ typedef struct nodes
 	struct nodes	*last;
 }	t_node;
 
+int			min_comp(int a, int b);
+void		rotate(t_node **s, t_node **stack_b, int next, int side);
+void		check_moves(t_node *nodec, int *side, t_node *stack);
 int			print_addresse(unsigned long int adr);
 int			ft_printf(const char *f, ...);
 int			print_nbr(int n);

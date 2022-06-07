@@ -6,53 +6,26 @@
 /*   By: rnabil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 09:33:15 by rnabil            #+#    #+#             */
-/*   Updated: 2022/05/20 17:44:14 by rnabil           ###   ########.fr       */
+/*   Updated: 2022/05/30 13:10:51 by rnabil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/push_swap.h"
 
-static int	min_comp(int a, int b)
+static	void	helper(t_node **stack_a, t_node **stack_b, t_node **next2)
 {
-	if (a > b)
-		return (b);
-	return (a);
+	*next2 = (*stack_b)->first->next;
+	pa(&*stack_a, &*stack_b);
+	*stack_b = *next2;
 }
 
-static void	rotate(t_node **s, t_node **stack_b, int next, int side)
+static void	helper2(t_node **stack_a, t_node **stack_b, t_node **next, int s)
 {
-	int	ptr_b;
-
-	ptr_b = get_min_moves(*stack_b)->value;
-	while (((*s)->first->value != next) && ((*stack_b)->first->value != ptr_b))
-	{
-		if (!side)
-			rr(&*s, &*stack_b);
-		else
-			rrr(&*s, &*stack_b);
-	}
-	while ((*s)->first->value != next)
-	{
-		if (!side)
-			ra(&*s);
-		else
-			rra(&*s);
-	}
-	while ((*stack_b)->first->value != ptr_b)
-	{
-		if (!side)
-			rb(&*stack_b);
-		else
-			rrb(&*stack_b);
-	}
-}
-
-static void	check_moves(t_node *nodec, int *side, t_node *stack)
-{
-	if (((float)(nodec->position) / list_size(stack->first)) > 0.5)
-		*side = 1;
-	else
-		*side = 0;
+	*next = get_next_number((*stack_b)->value, &*stack_a);
+	get_element_top_a(&*stack_a, (*next)->value, s);
+	pa(&*stack_a, &*stack_b);
+	set_min_first(&*stack_a);
+	*stack_a = (*stack_a)->first;
 }
 
 void	push_values(t_node **stack_a, t_node **stack_b)
@@ -77,16 +50,9 @@ void	push_values(t_node **stack_a, t_node **stack_b)
 			get_element_top_a(&*stack_a, next->value, side_a);
 			get_element_top_b(&(*stack_b), ptr_b->value, side_b);
 		}
-		if (list_size(*stack_b) > 1)
-			next2 = (*stack_b)->first->next;
-		else
+		if (!(list_size(*stack_b) > 1))
 			break ;
-		pa(&*stack_a, &*stack_b);
-		*stack_b = next2;
+		helper(&*stack_a, &*stack_b, &next2);
 	}
-	next = get_next_number((*stack_b)->value, &*stack_a);
-	get_element_top_a(&*stack_a, next->value, side_a);
-	pa(&*stack_a, &*stack_b);
-	set_min_first(&*stack_a);
-	*stack_a = (*stack_a)->first;
+	helper2(&*stack_a, &*stack_b, &next, side_a);
 }
