@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 		check_algo(&stack_a, &stack_b);
 	else
 		set_min_first(&stack_a);
+	//show_elements(stack_a);
 	clear_elements(&stack_a);
 	clear_elements(&stack_b);
 	return (0);
