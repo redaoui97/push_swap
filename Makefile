@@ -27,7 +27,7 @@ FUNCTIONS_printf = ft_printf/ft_printf ft_printf/ft_strlen \
 FUNCTIONS_algo = push_swap algo/lis_algo/calculate_lis algo/lis_algo/bool_lis_calculator algo/lis_algo/send_zeros algo/lis_algo/calculate_moves \
 		   algo/lis_algo/first_calculation algo/lis_algo/second_calculation algo/lis_algo/push_values algo/three_elem_algo/three_algo \
 		   algo/five_elem_algo/five_algo algo/lis_algo/src_push_values algo/lis_algo/push_values_src
-FUNCTIONS_src = src/atoi src/parsin src/is_sorted src/src_parsin
+FUNCTIONS_src = src/atoi src/parsin src/is_sorted src/src_parsin src/split
 
 OBJS_list = $(FUNCTIONS_list_management:=.o)
 OBJS_moves = $(FUNCTIONS_moves:=.o)
@@ -37,20 +37,39 @@ OBJS_src = $(FUNCTIONS_src:=.o)
 NAME = push_swap
 AR = ar rc
 
+#Bonus
+
+FUNCTIONS_moves_bonus = bonus/moves/pa bonus/moves/pb bonus/moves/ra bonus/moves/rb bonus/moves/rr \
+		  bonus/moves/rra bonus/moves/rrb bonus/moves/rrr bonus/moves/sa bonus/moves/sb \
+		  bonus/moves/ss
+FUNCTIONS_src_bonus = bonus/checker bonus/src/atoi bonus/src/parsin bonus/src/is_sorted bonus/src/src_parsin bonus/src/split
+FUNCTIONS_gnl_bonus = bonus/get_next_line/get_next_line bonus/get_next_line/get_next_line_utils
+
+OBJS_moves_bonus = $(FUNCTIONS_moves_bonus:=.o)
+OBJS_src_bonus = $(FUNCTIONS_src_bonus:=.o)
+OBJS_gnl_bonus = $(FUNCTIONS_gnl_bonus:=.o)
+NAME2 = checker
+
 .PHONY: all clean fclean re bonus
 
 all : $(NAME)
 
+bonus : $(NAME2)
+
 $(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
 	$(CC) $(FLAGS) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) -o $(NAME)
 
-%.o: %.c header/push_swap.h
+$(NAME2): $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_src_bonus) $(OBJS_gnl_bonus)
+	$(CC) $(FLAGS) $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_gnl_bonus) $(OBJS_src_bonus) -o $(NAME2)
+
+%.o: %.c header/push_swap.h bonus/header/checker.h
 	$(CC) $(FLAGS) -c $< -o $@
 	
 clean:
-	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
+	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) $(OBJS_moves_bonus) $(OBJS_src_bonus) $(OBJS_gnl_bonus)
+
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME2)
 
 re: fclean all

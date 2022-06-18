@@ -70,7 +70,7 @@ void		second_calculation(t_node **stack_a, t_node **stack_b);
 void		push_values(t_node **stack_a, t_node **stack_b);
 void		three_algo(t_node **stack);
 void		five_algo(t_node **stack_a, t_node **stack_b);
-long int	ft_atoi(char *str);
+long int	ft_atoi(char *str, t_node **stack);
 void		parsin(char *arg, t_node **stack_a);
 int			is_sorted(t_node **stack);
 t_node		*get_biggest(t_node **stack_a);
@@ -81,5 +81,7 @@ void		get_element_top_b(t_node **stack, int value, int side);
 void		error(t_node **stack);
 int			is_num(char arg);
 int			ft_strcmp(char *s1, char *s2);
-int			non_int(char *arg);
+int			non_int(char *arg, t_node **stack);
+char		**ft_split(char const *s, char c, int *size);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

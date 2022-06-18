@@ -20,7 +20,7 @@ static int	ft_isdigit(int c)
 		return (0);
 }
 
-long int	ft_atoi(char *str)
+long int	ft_atoi(char *str, t_node **stack)
 {
 	long int	res;
 	int			i;
@@ -31,6 +31,8 @@ long int	ft_atoi(char *str)
 		return (0);
 	if (str[0] != '-' && str[0] != '+' && !ft_isdigit(str[0]))
 		return (0);
+	if ((str[0] == '-' || str[0] == '+') && str[1] == '\0')
+		error (&*stack);
 	if (str[0] == '-')
 		neg = 1;
 	else

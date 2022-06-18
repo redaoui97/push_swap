@@ -94,8 +94,7 @@ int	main(int argc, char **argv)
 	i = argc - 1;
 	while (i)
 	{
-		parsin(argv[i], &stack_a);
-		add_element(&stack_a, ft_atoi(argv[i--]));
+		parsin(argv[i--], &stack_a);
 		stack_a = stack_a->first;
 	}
 	check_duplications(&stack_a);

@@ -45,9 +45,10 @@ int	ft_strcmp(char *s1, char *s2)
 	return (1);
 }
 
-int	non_int(char *arg)
+int	non_int(char *arg, t_node **stack)
 {
-	if ((ft_atoi(arg)) > 2147483647 || (ft_atoi(arg)) < -2147483648)
+	if ((ft_atoi(arg, &*stack)) > 2147483647
+		|| (ft_atoi(arg, &*stack)) < -2147483648)
 		return (1);
 	return (0);
 }

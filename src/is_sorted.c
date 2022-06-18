@@ -34,7 +34,8 @@ int	is_sorted(t_node **stack)
 	first_node = *stack;
 	if (list_size(*stack) < 3)
 		return (1);
-	if ((*stack)->last->value == get_min(*stack)->value && list_size(*stack) != 3)
+	if ((*stack)->last->value == get_min(*stack)->value
+		&& list_size(*stack) != 3)
 		rra(&*stack);
 	while (*stack)
 	{

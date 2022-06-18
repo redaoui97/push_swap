@@ -12,6 +12,44 @@
 
 #include "../header/push_swap.h"
 
+static size_t	ret_right_size(char const *s, unsigned int start, size_t len)
+{
+	size_t	size;
+
+	if (start + len < ft_strlen(s))
+		size = len + 1;
+	else
+		size = ft_strlen(s) - start + 1;
+	return (size);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*a;
+	size_t	i;
+	size_t	j;
+	size_t	size;
+
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+	{
+		a = malloc(sizeof(char) * 1);
+		a[0] = 0;
+		return (a);
+	}
+	size = ret_right_size(s, start, len);
+	a = (char *)malloc(sizeof(char) * (size));
+	if (!a)
+		return (NULL);
+	i = 0;
+	j = start;
+	while (i < size - 1 && s[j])
+		a[i++] = s[j++];
+	a[i] = '\0';
+	return (a);
+}
+
 static int	has_non_num(char *arg)
 {
 	int	i;
@@ -30,8 +68,26 @@ static int	has_non_num(char *arg)
 
 void	parsin(char *arg, t_node **stack_a)
 {
-	if (has_non_num(arg))
+	char	**words;
+	char	*word;
+	int		size;
+	int		i;
+
+	words = ft_split(arg, ' ', &size);
+	if (!words)
 		error(&*stack_a);
-	if (non_int(arg))
-		error(&*stack_a);
+	i = 0;
+	while (words[i])
+	{
+		if (has_non_num(words[i]))
+			error(&*stack_a);
+		if (non_int(words[i], &*stack_a))
+			error(&*stack_a);
+		add_element(&*stack_a, ft_atoi(words[i], &*stack_a));
+		i++;
+	}
+	i = 0;
+	while (words[i])
+		free(words[i++]);
+	free (words);
 }
