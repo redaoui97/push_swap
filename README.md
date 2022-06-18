@@ -1,6 +1,3 @@
-<style>
-  h3{ color:red;}
-</style>
 <h1>Push swap</h1>
 4th project on the 42 cursus
 
