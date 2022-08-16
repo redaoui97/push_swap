@@ -36,6 +36,10 @@ OBJS_printf = $(FUNCTIONS_printf:=.o)
 OBJS_src = $(FUNCTIONS_src:=.o)
 NAME = push_swap
 
+Compiling = 1
+Color1 = \e[92;5;118m
+Color2 = \033[0;33m
+
 #Bonus
 
 FUNCTIONS_moves_bonus = bonus/moves/pa bonus/moves/pb bonus/moves/ra bonus/moves/rb bonus/moves/rr \
@@ -56,19 +60,29 @@ all : $(NAME)
 bonus : $(NAME2)
 
 $(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
-	$(CC) $(FLAGS) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) -o $(NAME)
+	@$(CC) $(Flag) $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) -o $(NAME)
 
 $(NAME2): $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_src_bonus) $(OBJS_gnl_bonus)
-	$(CC) $(FLAGS) $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_gnl_bonus) $(OBJS_src_bonus) -o $(NAME2)
+	@$(CC) $(Flag) $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_gnl_bonus) $(OBJS_src_bonus) -o $(NAME2)
+	@echo "Compiling bonus..."
 
 %.o: %.c header/push_swap.h bonus/header/checker.h
-	$(CC) $(FLAGS) -c $< -o $@
-	
-clean:
-	rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) $(OBJS_moves_bonus) $(OBJS_src_bonus) $(OBJS_gnl_bonus)
+	@if [ $(Compiling) = '1' ]; then\
+		printf "${Color1}│                 ${Color1}Compiling...                ${Color1}│\n${Color1}│";\
+	fi
+	$(eval Compiling=$(shell echo $$(($(Compiling)+1))))
+	@printf "${Color1}▓"
+	@$(CC) $(Flag) -c $< -o $@
 
+norm:
+	norminette -R CheckForbiddenSourceHeader *
+
+clean:
+	@rm -f $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src) $(OBJS_moves_bonus) $(OBJS_src_bonus) $(OBJS_gnl_bonus)
+	@printf "${Color2}Removing object files...\n"
 
 fclean: clean
-	rm -f $(NAME) $(NAME2)
+	@rm -f $(NAME) $(NAME2)
+	@printf "${Color2}Removing executable...\n"
 
 re: fclean all
