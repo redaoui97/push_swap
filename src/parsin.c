@@ -66,6 +66,16 @@ static int	has_non_num(char *arg)
 	return (0);
 }
 
+static int	words_size(char **words)
+{
+	int	i;
+
+	i = 1;
+	while (words[i])
+		i++;
+	return (i);
+}
+
 void	parsin(char *arg, t_node **stack_a)
 {
 	char	**words;
@@ -73,18 +83,18 @@ void	parsin(char *arg, t_node **stack_a)
 	int		size;
 	int		i;
 
+	if (ft_strcmp(arg, ""))
+		error(&*stack_a);
 	words = ft_split(arg, ' ', &size);
 	if (!words)
 		error(&*stack_a);
-	i = 0;
-	while (words[i])
+	i = words_size(words) - 1;
+	while (i >= 0)
 	{
-		if (has_non_num(words[i]))
-			error(&*stack_a);
-		if (non_int(words[i], &*stack_a))
+		if (has_non_num(words[i]) || non_int(words[i], &*stack_a) || words[i] == '\0')
 			error(&*stack_a);
 		add_element(&*stack_a, ft_atoi(words[i], &*stack_a));
-		i++;
+		i--;
 	}
 	i = 0;
 	while (words[i])

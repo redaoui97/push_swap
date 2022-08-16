@@ -6,7 +6,7 @@
 #    By: rnabil <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 17:51:55 by rnabil            #+#    #+#              #
-#    Updated: 2022/05/13 17:51:59 by rnabil           ###   ########.fr        #
+#    Updated: 2022/08/15 13:01:40 by rnabil           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ OBJS_algo = $(FUNCTIONS_algo:=.o)
 OBJS_printf = $(FUNCTIONS_printf:=.o)
 OBJS_src = $(FUNCTIONS_src:=.o)
 NAME = push_swap
-AR = ar rc
 
 #Bonus
 
