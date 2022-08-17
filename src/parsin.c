@@ -79,7 +79,6 @@ static int	words_size(char **words)
 void	parsin(char *arg, t_node **stack_a)
 {
 	char	**words;
-	char	*word;
 	int		size;
 	int		i;
 
@@ -91,7 +90,8 @@ void	parsin(char *arg, t_node **stack_a)
 	i = words_size(words) - 1;
 	while (i >= 0)
 	{
-		if (has_non_num(words[i]) || non_int(words[i], &*stack_a) || words[i] == '\0')
+		if (has_non_num(words[i]) || non_int(words[i], &*stack_a)
+			|| words[i] == '\0')
 			error(&*stack_a);
 		add_element(&*stack_a, ft_atoi(words[i], &*stack_a));
 		i--;

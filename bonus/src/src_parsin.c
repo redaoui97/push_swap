@@ -33,7 +33,7 @@ int	ft_strcmp(char *s1, char *s2)
 	int	size;
 
 	size = ft_strlen(s1);
-	if (ft_strlen(s2) != size)
+	if (ft_strlen(s2) != (size_t)size)
 		return (0);
 	i = 0;
 	while (i < size)

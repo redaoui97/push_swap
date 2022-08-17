@@ -64,7 +64,7 @@ $(NAME): $(OBJS_list) $(OBJS_moves) $(OBJS_algo) $(OBJS_printf) $(OBJS_src)
 
 $(NAME2): $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_src_bonus) $(OBJS_gnl_bonus)
 	@$(CC) $(Flag) $(OBJS_list) $(OBJS_moves_bonus) $(OBJS_printf) $(OBJS_gnl_bonus) $(OBJS_src_bonus) -o $(NAME2)
-	@echo "Compiling bonus..."
+	@printf "\n${Color1}Compiling bonus..."
 
 %.o: %.c header/push_swap.h bonus/header/checker.h
 	@if [ $(Compiling) = '1' ]; then\

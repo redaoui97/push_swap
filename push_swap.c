@@ -46,28 +46,11 @@ static void	check_algo(t_node **stack_a, t_node **stack_b)
 	push_values(&*stack_a, &*stack_b);
 }
 
-static void	free_words(char **words, int count)
-{
-	int	i;
-
-	i = 0;
-	while (i < count)
-	{
-		free(words[i]);
-		words[i] = NULL;
-		i++;
-	}
-	free(words);
-	words = NULL;
-}
-
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	char	**words;
 	int		i;
-	int		size;
 
 	stack_a = NULL;
 	stack_b = NULL;

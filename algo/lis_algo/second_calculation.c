@@ -33,7 +33,6 @@ static t_node	*get_next_number_here(int value, t_node **stack_a)
 {
 	t_node	*next;
 	t_node	*first_node;
-	int		next_value;
 
 	next = get_biggest_here(&*stack_a);
 	first_node = *stack_a;

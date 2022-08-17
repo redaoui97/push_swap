@@ -12,20 +12,6 @@
 
 #include "../header/checker.h"
 
-static t_node	*get_min(t_node *stack)
-{
-	t_node	*min;
-
-	min = stack;
-	while (stack)
-	{
-		if (stack->value < min->value)
-			min = stack;
-		stack = stack->next;
-	}
-	return (min);
-}
-
 int	is_sorted(t_node **stack)
 {
 	t_node	*previous;
